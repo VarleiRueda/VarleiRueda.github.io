@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Portfólio Varlei Rueda</title>
+<meta name="description" content="Portfólio de Varlei Vazquez Rueda: banco de dados, automação, inteligência artificial e segurança da informação.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@400;500;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+/* Layout: documento técnico em colunas. Cabeçalho com resumo em painel, seções numeradas por evidência. */
+:root{
+  --bg:#f4f6f8;
+  --surface:#ffffff;
+  --ink:#0f1b2d;
+  --muted:#556274;
+  --line:#d3dae3;
+  --accent:#0a6b66;
+  --accent-soft:#e3f2f0;
+  --warm:#b8420f;
+  --display:"Familjen Grotesk",system-ui,sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,Consolas,monospace;
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#0b121c;--surface:#131d2b;--ink:#e8edf3;--muted:#9aa8b8;--line:#263447;--accent:#4fd6c4;--accent-soft:#12302f;--warm:#ff8a5c;
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0b121c;--surface:#131d2b;--ink:#e8edf3;--muted:#9aa8b8;--line:#263447;--accent:#4fd6c4;--accent-soft:#12302f;--warm:#ff8a5c;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+section[id]{scroll-margin-top:110px}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--display);font-size:17px;line-height:1.6}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--warm);outline-offset:3px}
+.wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+.mono{font-family:var(--mono);font-size:.8rem;letter-spacing:.02em}
+
+header.top{position:sticky;top:0;z-index:5;background:var(--bg);border-bottom:1px solid var(--line)}
+header.top .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;padding-top:12px;padding-bottom:12px}
+header.top .brand{font-weight:700;color:var(--accent)}
+header.top nav{display:flex;gap:18px;flex-wrap:wrap;color:var(--muted)}
+header.top a{text-decoration:none}
+header.top a:hover{color:var(--warm)}
+
+/* abertura */
+.hero{display:grid;grid-template-columns:1.2fr .8fr;gap:44px;padding:64px 20px 48px;align-items:start}
+.eyebrow{color:var(--accent);font-family:var(--mono);font-size:.8rem;letter-spacing:.06em;text-transform:uppercase;margin:0 0 14px;font-weight:700}
+.hero h1{font-size:clamp(2.4rem,6vw,4.4rem);line-height:1.02;letter-spacing:-.035em;margin:0 0 12px;font-weight:700;text-wrap:balance}
+.hero .role{font-size:1.2rem;color:var(--muted);margin:0 0 22px;font-weight:500}
+.hero .lead{font-size:1.1rem;max-width:36em;margin:0 0 28px;text-wrap:pretty}
+.cta{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:28px}
+.btn{display:inline-block;text-decoration:none;font-weight:700;font-size:.95rem;padding:11px 18px;border-radius:6px;border:2px solid var(--accent);color:var(--accent)}
+.btn.solid{background:var(--accent);color:var(--surface)}
+.btn:hover{border-color:var(--warm);background:var(--warm);color:#fff}
+.stats{display:grid;grid-template-columns:repeat(3,auto);gap:0;border:1px solid var(--line);background:var(--surface);border-radius:8px;width:max-content;max-width:100%}
+.stats div{padding:12px 22px;border-right:1px solid var(--line)}
+.stats div:last-child{border-right:0}
+.stats b{display:block;font-size:1.6rem;line-height:1.1;letter-spacing:-.02em}
+.stats span{font-size:.82rem;color:var(--muted)}
+.panel{background:var(--surface);border:1px solid var(--line);border-top:4px solid var(--accent);border-radius:8px;padding:6px 22px 14px}
+.panel h2{font-family:var(--mono);font-size:.78rem;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin:16px 0 4px;font-weight:700}
+.panel dl{margin:0}
+.panel dt{font-family:var(--mono);font-size:.74rem;color:var(--accent);text-transform:uppercase;letter-spacing:.05em;margin-top:14px;font-weight:700}
+.panel dd{margin:2px 0 0;font-size:.97rem}
+@media (max-width:860px){.hero{grid-template-columns:1fr;padding-top:40px}}
+@media (max-width:520px){.stats{grid-template-columns:1fr;width:100%}.stats div{border-right:0;border-bottom:1px solid var(--line)}.stats div:last-child{border-bottom:0}}
+
+section{padding:56px 0;border-top:1px solid var(--line)}
+.sh{display:flex;align-items:baseline;gap:14px;margin:0 0 8px}
+.sh .n{font-family:var(--mono);color:var(--warm);font-weight:700;font-size:.9rem}
+.sh h2{font-size:1.9rem;letter-spacing:-.025em;margin:0;text-wrap:balance}
+.sub{margin:0 0 30px;color:var(--muted);max-width:46em}
+h3.group{font-family:var(--mono);font-size:.78rem;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:.06em;margin:34px 0 12px}
+p{margin:0 0 14px}
+
+/* competências */
+.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:16px}
+.skill{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:20px}
+.skill h3{margin:0 0 12px;font-size:1rem;font-family:var(--mono);color:var(--accent);text-transform:uppercase;letter-spacing:.05em}
+.tags{display:flex;flex-wrap:wrap;gap:6px}
+.tags span{font-family:var(--mono);font-size:.78rem;background:var(--bg);border:1px solid var(--line);padding:3px 9px;border-radius:4px}
+
+/* projetos */
+.cases{display:grid;gap:18px}
+.case{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:24px 26px}
+.case header{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;align-items:baseline;margin-bottom:14px}
+.case h3{margin:0;font-size:1.3rem;letter-spacing:-.015em}
+.badge{font-family:var(--mono);font-size:.74rem;font-weight:700;padding:3px 10px;border-radius:4px;border:1px solid var(--accent);color:var(--accent);white-space:nowrap}
+.badge.wip{border-color:var(--warm);color:var(--warm)}
+.case dl{display:grid;grid-template-columns:130px 1fr;gap:10px 18px;margin:0}
+.case dt{font-family:var(--mono);font-size:.74rem;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);padding-top:4px;font-weight:700}
+.case dd{margin:0}
+@media (max-width:620px){.case dl{grid-template-columns:1fr;gap:2px}.case dd{margin-bottom:10px}}
+
+/* segurança */
+.tablewrap{overflow-x:auto;border:1px solid var(--line);border-radius:8px;background:var(--surface)}
+table.ev{border-collapse:collapse;width:100%;min-width:560px}
+table.ev th,table.ev td{text-align:left;padding:14px 18px;border-bottom:1px solid var(--line);vertical-align:top}
+table.ev tr:last-child td{border-bottom:0}
+table.ev th{font-family:var(--mono);font-size:.74rem;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);background:var(--bg)}
+table.ev td:first-child{font-weight:700;width:30%}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid var(--line);background:var(--surface);border-radius:8px;overflow:hidden;margin-bottom:26px}
+.step{padding:20px 22px;border-right:1px solid var(--line)}
+.step:last-child{border-right:0}
+.step .st{display:inline-block;font-family:var(--mono);font-size:.72rem;font-weight:700;padding:3px 9px;border-radius:4px;margin-bottom:10px}
+.step.done .st{background:var(--accent);color:var(--surface)}
+.step.now .st{background:var(--warm);color:#fff}
+.step.next .st{border:1px dashed var(--muted);color:var(--muted)}
+.step h3{margin:0 0 4px;font-size:1.05rem;line-height:1.3}
+.step p{margin:0;color:var(--muted);font-size:.93rem}
+@media (max-width:720px){.steps{grid-template-columns:1fr}.step{border-right:0;border-bottom:1px solid var(--line)}.step:last-child{border-bottom:0}}
+
+/* IA */
+.ai{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px}
+.aicard{background:var(--surface);border:1px solid var(--line);border-left:4px solid var(--accent);border-radius:8px;padding:20px 22px}
+.aicard .k{font-family:var(--mono);font-size:.74rem;color:var(--warm);font-weight:700;letter-spacing:.05em}
+.aicard h3{margin:4px 0 8px;font-size:1.08rem;line-height:1.3}
+.aicard p{margin:0;color:var(--muted);font-size:.97rem}
+
+/* listas de certificados e disciplinas */
+.certs{list-style:none;margin:0;padding:0;border:1px solid var(--line);background:var(--surface);border-radius:8px;overflow:hidden}
+.certs li{display:grid;grid-template-columns:1fr auto;gap:2px 16px;padding:11px 18px;border-bottom:1px solid var(--line)}
+.certs li:last-child{border-bottom:0}
+.certs strong{font-weight:500}
+.certs .meta{font-family:var(--mono);font-size:.75rem;color:var(--muted);text-align:right;white-space:nowrap;font-variant-numeric:tabular-nums}
+.certs .org{grid-column:1/-1;font-size:.88rem;color:var(--muted)}
+.certs.hl{border-color:var(--accent);border-width:2px}
+@media (max-width:520px){.certs li{grid-template-columns:1fr}.certs .meta{text-align:left;white-space:normal}}
+.twocol{display:grid;grid-template-columns:repeat(auto-fit,minmax(310px,1fr));gap:0 24px;align-items:start}
+
+/* atividades acadêmicas */
+.acts{border:1px solid var(--line);background:var(--surface);border-radius:8px;overflow:hidden}
+.act{display:grid;grid-template-columns:70px 1fr;gap:4px 18px;padding:16px 20px;border-bottom:1px solid var(--line)}
+.act:last-child{border-bottom:0}
+.act .y{font-family:var(--mono);font-size:.78rem;color:var(--muted);font-weight:700;padding-top:3px}
+.act h3{margin:0 0 4px;font-size:1.02rem;line-height:1.35}
+.act p{margin:0 0 8px;color:var(--muted);font-size:.96rem}
+.act .tags{margin:0}
+@media (max-width:560px){.act{grid-template-columns:1fr}}
+
+.exp{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:22px 26px}
+.exp h3{margin:0 0 2px;font-size:1.2rem}
+.exp .meta2{color:var(--muted);margin:0 0 12px;font-size:.95rem}
+.exp ul{margin:0;padding-left:1.2em}
+.exp li{margin:5px 0}
+
+.contact{background:var(--ink);color:var(--bg);border-radius:10px;padding:36px}
+.contact h2{margin:0 0 10px;font-size:1.8rem;letter-spacing:-.02em}
+.contact p{max-width:42em;font-size:1.05rem}
+.contact .info{font-family:var(--mono);font-size:.9rem;margin:0 0 20px}
+.contact .btn{border-color:var(--bg);color:var(--bg)}
+.contact .btn.solid{background:var(--bg);color:var(--ink)}
+.contact .btn:hover{background:var(--warm);border-color:var(--warm);color:#fff}
+
+footer{border-top:1px solid var(--line);padding:26px 0 56px;color:var(--muted)}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+@media print{
+  header.top{position:static}
+  header.top nav{display:none}
+  section{padding:24px 0;break-inside:avoid-page}
+  .case,.act,.aicard,.skill{break-inside:avoid}
+  body{background:#fff}
+}
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="wrap mono">
+    <span class="brand">Varlei Vazquez Rueda</span>
+    <nav aria-label="Seções">
+      <a href="#resumo">resumo</a>
+      <a href="#competencias">competências</a>
+      <a href="#projetos">projetos</a>
+      <a href="#seguranca">segurança</a>
+      <a href="#ia">IA aplicada</a>
+      <a href="#formacao">formação</a>
+      <a href="#certificados">certificações</a>
+      <a href="#atividades">atividades</a>
+      <a href="#experiencia">experiência</a>
+      <a href="#contato">contato</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<div class="wrap hero">
+  <div>
+    <p class="eyebrow">Banco de dados · Automação · IA · Segurança da informação</p>
+    <h1>Varlei Vazquez Rueda</h1>
+    <p class="role">Analista e programador de banco de dados</p>
+    <p class="lead">Graduado em Tecnologia em Banco de Dados pela UNINTER, com experiência prática em SQL, Python e automação de processos. Estudo cibersegurança e farei pós-graduação em Segurança da Informação. Busco vaga de estágio ou cargo de assistente ou júnior em T.I.</p>
+    <div class="cta">
+      <a class="btn solid" href="https://www.linkedin.com/in/varleivazquezrueda">LinkedIn</a>
+      <a class="btn" href="https://github.com/VarleiRueda">GitHub</a>
+      <a class="btn" href="mailto:varlei.t.i.analise@gmail.com">E-mail</a>
+    </div>
+    <div class="stats">
+      <div><b>46</b><span>certificados</span></div>
+      <div><b>410 h</b><span>de formação</span></div>
+      <div><b>14</b><span>certificados de n8n</span></div>
+    </div>
+  </div>
+  <aside class="panel" aria-label="Resumo técnico">
+    <h2>Resumo técnico</h2>
+    <dl>
+      <dt>Formação</dt><dd>Tecnologia em Banco de Dados, UNINTER (concluída em 2026)</dd>
+      <dt>Em andamento</dt><dd>Cibersegurança, Digital Innovation One e Santander</dd>
+      <dt>Próximo passo</dt><dd>Pós-graduação em Segurança da Informação</dd>
+      <dt>Bancos de dados</dt><dd>SQL Server, MySQL, SQLite e Neo4j</dd>
+      <dt>Programação</dt><dd>Python, SQL, JavaScript e PowerShell</dd>
+      <dt>Automação e IA</dt><dd>n8n, RPA com Python, Docker e modelos Claude e Gemini</dd>
+      <dt>Objetivo</dt><dd>Estágio ou cargo de assistente ou júnior em T.I.</dd>
+    </dl>
+  </aside>
+</div>
+
+<section id="resumo">
+  <div class="wrap">
+    <div class="sh"><span class="n">01</span><h2>Resumo profissional</h2></div>
+    <p class="sub">Atuação, formação e direção de carreira.</p>
+    <p>Atuo com bancos de dados relacionais e não relacionais, automação de processos e integração de modelos de linguagem a aplicações. Construí fluxos no n8n, automações RPA em Python e rotinas de tratamento de dados, e desenvolvo o Sentinela, um agente de segurança em Python.</p>
+    <p>Meu foco de carreira é a segurança da informação, com ênfase na proteção de dados. Tenho como pontos fortes a responsabilidade, a persistência na resolução de problemas e a atenção à qualidade da entrega.</p>
+  </div>
+</section>
+
+<section id="competencias">
+  <div class="wrap">
+    <div class="sh"><span class="n">02</span><h2>Competências técnicas</h2></div>
+    <p class="sub">Tecnologias com as quais já trabalhei em projetos, disciplinas ou cursos.</p>
+    <div class="skills">
+      <div class="skill"><h3>Bancos de dados</h3><div class="tags"><span>SQL</span><span>SQL Server</span><span>MySQL</span><span>SQLite</span><span>Neo4j</span><span>Modelagem entidade-relacionamento</span><span>UML</span></div></div>
+      <div class="skill"><h3>Programação</h3><div class="tags"><span>Python</span><span>Pandas</span><span>NumPy</span><span>JavaScript</span><span>PowerShell</span><span>HTML e CSS</span></div></div>
+      <div class="skill"><h3>Dados e BI</h3><div class="tags"><span>Power BI</span><span>Análise exploratória</span><span>Estatística descritiva</span></div></div>
+      <div class="skill"><h3>Automação</h3><div class="tags"><span>n8n</span><span>Webhooks e APIs</span><span>RPA com PyAutoGUI</span><span>PyInstaller</span></div></div>
+      <div class="skill"><h3>Inteligência artificial</h3><div class="tags"><span>Agentes de IA</span><span>Integração de modelos de linguagem (LLMs)</span><span>Claude</span><span>Gemini</span><span>ChatGPT</span><span>NotebookLM</span><span>Engenharia de prompts</span></div></div>
+      <div class="skill"><h3>Segurança</h3><div class="tags"><span>Fundamentos de cibersegurança</span><span>Segurança de dados</span><span>Controle de acesso</span><span>Riscos em nuvem</span></div></div>
+      <div class="skill"><h3>Infraestrutura</h3><div class="tags"><span>Docker</span><span>Windows 11</span><span>Linux Server</span><span>Ubuntu</span><span>Kali Linux</span><span>AWS (em estudo)</span></div></div>
+      <div class="skill"><h3>Ferramentas</h3><div class="tags"><span>GitHub</span><span>Postman</span><span>APIs REST</span><span>VS Code</span><span>Anaconda</span><span>Jupyter Notebook</span></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="projetos">
+  <div class="wrap">
+    <div class="sh"><span class="n">03</span><h2>Projetos técnicos</h2></div>
+    <p class="sub">Projetos pessoais, com contexto, solução e tecnologias.</p>
+    <div class="cases">
+
+      <article class="case">
+        <header><h3>Sentinela: agente de segurança pessoal</h3><span class="badge wip">Em desenvolvimento</span></header>
+        <dl>
+          <dt>Contexto</dt><dd>Monitoramento de segurança do próprio computador.</dd>
+          <dt>Solução</dt><dd>Agente em Python com arquitetura modular: núcleo, verificações, IA, painel, banco de dados, logs, relatórios e testes. O módulo de IA usa o Claude para analisar os eventos observados.</dd>
+          <dt>Tecnologias</dt><dd><div class="tags"><span>Python</span><span>Claude</span><span>SQL</span><span>Ambiente virtual</span></div></dd>
+        </dl>
+      </article>
+
+      <article class="case">
+        <header><h3>Agente de IA e automação de fluxos</h3><span class="badge">n8n</span></header>
+        <dl>
+          <dt>Contexto</dt><dd>Automação de etapas de processo com apoio de um modelo de linguagem, sem custo de licença.</dd>
+          <dt>Solução</dt><dd>Agente integrado ao Gemini Flash, com roteamento e regras condicionais em JavaScript. O n8n é hospedado em ambiente próprio (self-hosted), com Docker e volume persistente, e a atualização é feita por um script em PowerShell. Após uma atualização, o serviço foi recriado com a imagem oficial e o volume de dados original.</dd>
+          <dt>Tecnologias</dt><dd><div class="tags"><span>n8n</span><span>Docker</span><span>Gemini</span><span>JavaScript</span><span>PowerShell</span></div></dd>
+        </dl>
+      </article>
+
+      <article class="case">
+        <header><h3>Automação de login em portal web (RPA)</h3><span class="badge">Em uso</span></header>
+        <dl>
+          <dt>Contexto</dt><dd>Acesso repetitivo a um portal de cursos.</dd>
+          <dt>Solução</dt><dd>Robô em Python com PyAutoGUI que executa o acesso sem intervenção manual. A solução foi empacotada em um executável (.exe) com PyInstaller e é aberta por um atalho na área de trabalho, criado com PowerShell.</dd>
+          <dt>Tecnologias</dt><dd><div class="tags"><span>Python</span><span>PyAutoGUI</span><span>PyInstaller</span><span>PowerShell</span></div></dd>
+        </dl>
+      </article>
+
+      <article class="case">
+        <header><h3>Integração e tratamento de dados</h3><span class="badge">Rotinas em Python</span></header>
+        <dl>
+          <dt>Contexto</dt><dd>Tarefas repetitivas de consolidação de informações em bancos SQL.</dd>
+          <dt>Solução</dt><dd>Rotinas em Python que integram bancos de dados SQL e tratam as informações, automatizando o processo.</dd>
+          <dt>Tecnologias</dt><dd><div class="tags"><span>Python</span><span>SQL Server</span><span>MySQL</span></div></dd>
+        </dl>
+      </article>
+
+    </div>
+    <p style="margin-top:18px;color:var(--muted)">Outros exercícios: jogo em Pygame com geração de obstáculos sem sobreposição e script em Python para criar e consultar um banco SQLite.</p>
+  </div>
+</section>
+
+<section id="seguranca">
+  <div class="wrap">
+    <div class="sh"><span class="n">04</span><h2>Segurança da informação</h2></div>
+    <p class="sub">Trajetória e evidências na área de segurança.</p>
+    <div class="steps">
+      <div class="step done"><span class="st">CONCLUÍDA</span><h3>Graduação em Tecnologia em Banco de Dados</h3><p>UNINTER, com disciplinas de segurança, auditoria e conformidade.</p></div>
+      <div class="step now"><span class="st">EM ANDAMENTO</span><h3>Curso de cibersegurança</h3><p>Trilha da Digital Innovation One e do Santander.</p></div>
+      <div class="step next"><span class="st">PRÓXIMO PASSO</span><h3>Pós-graduação em Segurança da Informação</h3><p>Aprofundamento em proteção de dados, riscos e defesa de sistemas.</p></div>
+    </div>
+    <div class="tablewrap">
+      <table class="ev">
+        <thead><tr><th>Eixo</th><th>Evidência</th></tr></thead>
+        <tbody>
+          <tr><td>Cursos</td><td>Cibersegurança do Zero à Prática (Aceleração Santander, 1 h, 03/08/2026) e Segurança e Boas Práticas em Projetos Feitos com Vibe Code (1 h, 10/08/2026).</td></tr>
+          <tr><td>Disciplinas</td><td>Segurança em Banco de Dados (nota 99), Segurança em Sistemas de Informação (89), Auditoria de Sistemas (88) e Legislação, Ética e Conformidade (80).</td></tr>
+          <tr><td>Nuvem</td><td>Estudo de caso sobre migração para a nuvem, com identificação de riscos, como invasão, malware e phishing, e de medidas de mitigação: criptografia; autenticação em dois fatores; firewall e detecção de intrusão; políticas de acesso; backups; e treinamento dos usuários.</td></tr>
+          <tr><td>Controle de acesso</td><td>Levantamento de requisitos de um sistema com dois perfis de acesso: administrador, com acesso total, e funcionário, sem acesso aos dados financeiros.</td></tr>
+          <tr><td>Projeto aplicado</td><td>Sentinela, agente de segurança em Python com módulo de IA, em desenvolvimento.</td></tr>
+          <tr><td>Ambiente</td><td>Uso de Linux Server, Ubuntu e Kali Linux.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section id="ia">
+  <div class="wrap">
+    <div class="sh"><span class="n">05</span><h2>Inteligência artificial aplicada ao desenvolvimento</h2></div>
+    <p class="sub">Uso a IA como ferramenta de engenharia para investigar, testar e construir, sempre validando o resultado antes de considerá-lo pronto.</p>
+    <div class="ai">
+      <div class="aicard"><span class="k">01 · INVESTIGAÇÃO</span><h3>Investigação de erros</h3><p>Apresento à IA a mensagem de erro, o ambiente e as alterações recentes para levantar as causas prováveis. Caso: o contêiner do n8n desapareceu após uma atualização, e investiguei a causa antes de intervir.</p></div>
+      <div class="aicard"><span class="k">02 · VALIDAÇÃO</span><h3>Comparação de hipóteses e validação de soluções</h3><p>Solicito mais de uma hipótese, testo uma de cada vez e adoto somente a solução que produz o resultado esperado. Caso: o serviço do n8n foi recriado com a imagem oficial e o volume de dados original, e a volta ao funcionamento foi confirmada.</p></div>
+      <div class="aicard"><span class="k">03 · AUTOMAÇÃO</span><h3>Construção de automações</h3><p>Fluxos no n8n com webhooks, APIs e regras condicionais; robôs RPA em Python com PyAutoGUI; e scripts de manutenção em PowerShell. Cada automação é planejada antes de ser montada.</p></div>
+      <div class="aicard"><span class="k">04 · INTEGRAÇÃO</span><h3>Integração de modelos de linguagem aos projetos</h3><p>O Gemini Flash é o modelo do agente de IA no n8n, e o Claude é o modelo usado no módulo de análise de eventos do Sentinela.</p></div>
+      <div class="aicard"><span class="k">05 · TESTES</span><h3>Verificação e teste do código gerado</h3><p>Leio o código, executo-o em ambiente controlado e confiro o resultado antes de adotá-lo. O Sentinela mantém uma pasta de testes, e a API desenvolvida na faculdade foi testada no Postman, com registro por capturas de tela.</p></div>
+    </div>
+    <h3 class="group">Ferramentas de IA utilizadas</h3>
+    <div class="tags"><span>Claude</span><span>Gemini</span><span>ChatGPT</span><span>NotebookLM</span><span>Engenharia de prompts</span></div>
+    <p class="sub" style="margin:14px 0 0">Certificações relacionadas: Claude para Builders, Fundamentos do ChatGPT, Domine a IA com Gemini, Treinando uma IA de Aprendizagem: Explore o Poder do NotebookLM, Fundamentos da IA Moderna e Introdução à Engenharia de Prompts.</p>
+  </div>
+</section>
+
+<section id="formacao">
+  <div class="wrap">
+    <div class="sh"><span class="n">06</span><h2>Formação acadêmica</h2></div>
+    <p class="sub">Tecnologia em Banco de Dados, UNINTER, concluída em 2026. Notas de 0 a 100, conforme o histórico escolar. Estão listadas as disciplinas ligadas a segurança, bancos de dados, IA e desenvolvimento.</p>
+<h3 class="group">Segurança, auditoria e conformidade</h3>
+    <ul class="certs hl">
+      <li><strong>Segurança em Banco de Dados</strong><span class="meta">nota 99 · A2/2026</span></li>
+      <li><strong>Segurança em Sistemas de Informação</strong><span class="meta">nota 89 · B2/2025</span></li>
+      <li><strong>Auditoria de Sistemas</strong><span class="meta">nota 88 · C1/2026</span></li>
+      <li><strong>Governança de Sistemas da Informação</strong><span class="meta">nota 86 · C1/2024</span></li>
+      <li><strong>Legislação, Ética e Conformidade</strong><span class="meta">nota 80 · B1/2026</span></li>
+    </ul>
+    <div class="twocol">
+      <div>
+    <h3 class="group">Bancos de dados</h3>
+    <ul class="certs">
+      <li><strong>Banco de Dados Relacional</strong><span class="meta">nota 99 · C2/2024</span></li>
+      <li><strong>Administração em Banco de Dados I</strong><span class="meta">nota 93 · C2/2025</span></li>
+      <li><strong>Banco de Dados em Nuvem</strong><span class="meta">nota 93 · A1/2026</span></li>
+      <li><strong>Administração em Banco de Dados II</strong><span class="meta">nota 91 · B2/2026</span></li>
+      <li><strong>Banco de Dados NoSQL</strong><span class="meta">nota 91 · C2/2025</span></li>
+      <li><strong>Sistema Gerenciador de Banco de Dados</strong><span class="meta">nota 85 · A1/2025</span></li>
+    </ul>
+      </div>
+      <div>
+    <h3 class="group">Inteligência artificial e dados</h3>
+    <ul class="certs">
+      <li><strong>Eletiva I: Introdução à Inteligência Artificial</strong><span class="meta">nota 99 · C1/2026</span></li>
+      <li><strong>Análise Exploratória de Dados</strong><span class="meta">nota 99 · B2/2025</span></li>
+      <li><strong>Machine Learning</strong><span class="meta">nota 96 · C1/2025</span></li>
+      <li><strong>Eletiva II: Deep Learning</strong><span class="meta">nota 93 · B2/2026</span></li>
+      <li><strong>Visualização de Dados e Storytelling</strong><span class="meta">nota 87 · B1/2026</span></li>
+    </ul>
+      </div>
+      <div>
+    <h3 class="group">Desenvolvimento e infraestrutura</h3>
+    <ul class="certs">
+      <li><strong>Programação Orientada a Objetos</strong><span class="meta">nota 97 · A2/2025</span></li>
+      <li><strong>Lógica de Programação e Algoritmos</strong><span class="meta">nota 92 · C1/2024</span></li>
+      <li><strong>Linguagem de Programação</strong><span class="meta">nota 91 · A1/2025</span></li>
+      <li><strong>Desenvolvimento Web: Back End</strong><span class="meta">nota 91 · C1/2025</span></li>
+      <li><strong>DevOps e Integração Contínua</strong><span class="meta">nota 85 · A1/2026</span></li>
+    </ul>
+      </div>
+      <div>
+    <h3 class="group">Extensão universitária</h3>
+    <ul class="certs">
+      <li><strong>Atividades Extensionistas I: Tecnologia Aplicada à Inclusão Digital – Levantamento</strong><span class="meta">nota 100 · C2/2024</span></li>
+      <li><strong>Atividades Extensionistas II: Tecnologia Aplicada à Inclusão Digital – Projeto</strong><span class="meta">nota 89 · C2/2025</span></li>
+    </ul>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section id="certificados">
+  <div class="wrap">
+    <div class="sh"><span class="n">07</span><h2>Certificações e cursos</h2></div>
+    <p class="sub">Principais certificados, agrupados por tema. A carga horária é a registrada em cada certificado.</p>
+
+    <h3 class="group">Segurança da informação</h3>
+    <ul class="certs hl">
+      <li><strong>Cibersegurança do Zero à Prática</strong><span class="meta">1 h · 03/08/2026</span><span class="org">Aceleração Santander · Digital Innovation One</span></li>
+      <li><strong>Segurança e Boas Práticas em Projetos Feitos com Vibe Code</strong><span class="meta">1 h · 10/08/2026</span><span class="org">Digital Innovation One</span></li>
+    </ul>
+
+    <div class="twocol">
+      <div>
+        <h3 class="group">Python e programação</h3>
+        <ul class="certs">
+          <li><strong>Python Impressionador (edição 2026)</strong><span class="meta">118 h · 13/07/2026</span><span class="org">Hashtag Treinamentos · inclui SQL, APIs, automação web e ambientes virtuais</span></li>
+          <li><strong>Python Impressionador (edição 2024)</strong><span class="meta">121 h · 17/09/2024</span><span class="org">Hashtag Treinamentos</span></li>
+          <li><strong>Jornada Python</strong><span class="meta">8 h · 16/01/2025</span><span class="org">Hashtag Treinamentos</span></li>
+          <li><strong>Algoritmos e Lógica de Programação</strong><span class="meta">2 h · 18/09/2024</span><span class="org">Hashtag Treinamentos</span></li>
+          <li><strong>Teste de Python, aprovado</strong><span class="meta">18/07/2024</span><span class="org">Nerdin Vagas de TI</span></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="group">Dados e Power BI</h3>
+        <ul class="certs">
+          <li><strong>Intensivão de Análise de Dados</strong><span class="meta">8 h · 19/12/2024</span><span class="org">Hashtag Treinamentos</span></li>
+          <li><strong>Intensivão de Power BI</strong><span class="meta">8 h · 12/09/2024</span><span class="org">Hashtag Treinamentos</span></li>
+          <li><strong>Intensivão de Power BI</strong><span class="meta">8 h · 20/06/2024</span><span class="org">Hashtag Treinamentos</span></li>
+          <li><strong>Introdução à Análise de Dados</strong><span class="meta">1 h · 23/04/2026</span><span class="org">Randstad · Digital Innovation One</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <h3 class="group">Inteligência artificial</h3>
+    <ul class="certs">
+      <li><strong>Claude para Builders</strong><span class="meta">5 h · 03/11/2026</span><span class="org">Tera</span></li>
+      <li><strong>Fundamentos do ChatGPT</strong><span class="meta">8 h · 14/08/2026</span><span class="org">Santander</span></li>
+      <li><strong>Domine a IA com Gemini</strong><span class="meta">2 h · 14/08/2026</span><span class="org">Santander</span></li>
+      <li><strong>Jornada Inteligência Artificial</strong><span class="meta">8 h · 18/07/2024</span><span class="org">Hashtag Treinamentos</span></li>
+      <li><strong>Treinando uma IA de Aprendizagem: Explore o Poder do NotebookLM</strong><span class="meta">4 h · 29/08/2026</span><span class="org">Digital Innovation One · projeto</span></li>
+      <li><strong>Fundamentos da IA Moderna: Machine Learning, LLMs, IA Generativa e Agentes</strong><span class="meta">2 h · 17/08/2026</span><span class="org">Digital Innovation One</span></li>
+      <li><strong>Potencializando Seus Estudos e Carreira com IA (Chatbots, Copilotos e Agentes)</strong><span class="meta">2 h · 23/08/2026</span><span class="org">Digital Innovation One</span></li>
+      <li><strong>Introdução à Engenharia de Prompts</strong><span class="meta">1 h · 27/08/2026</span><span class="org">Digital Innovation One</span></li>
+      <li><strong>Microsoft Week: AI Data Engineering</strong><span class="meta">1 h · 13/08/2026</span><span class="org">Digital Innovation One</span></li>
+    </ul>
+
+    <h3 class="group">Automação com n8n e RPA</h3>
+    <ul class="certs">
+      <li><strong>Criando um Processo de RPA com n8n e Python</strong><span class="meta">1 h · 24/09/2026</span><span class="org">Digital Innovation One · projeto</span></li>
+      <li><strong>Uso de Webhooks e APIs no n8n</strong><span class="meta">1 h · 18/09/2026</span><span class="org">Digital Innovation One</span></li>
+      <li><strong>Manipulação de Dados e Variáveis no n8n</strong><span class="meta">1 h · 13/09/2026</span><span class="org">Digital Innovation One</span></li>
+      <li><strong>Planejando Automações com n8n Usando Apenas Bons Prompts</strong><span class="meta">1 h · 11/09/2026</span><span class="org">Digital Innovation One</span></li>
+      <li><strong>Automatizando Processos com n8n</strong><span class="meta">1 h · 11/09/2026</span><span class="org">Digital Innovation One</span></li>
+      <li><strong>Integração com Serviços Populares no n8n</strong><span class="meta">1 h · 05/09/2026</span><span class="org">Digital Innovation One</span></li>
+      <li><strong>Utilizando Nós Padrão do n8n</strong><span class="meta">1 h · 04/09/2026</span><span class="org">Digital Innovation One</span></li>
+      <li><strong>Bootcamp Santander 2026: Automação com n8n</strong><span class="meta">1 h · 29/08/2026</span><span class="org">Digital Innovation One</span></li>
+      <li><strong>Agentes de IA (DIO Agent)</strong><span class="meta">1 h · 27/08/2026</span><span class="org">Digital Innovation One</span></li>
+      <li><strong>Navegação e Interface do n8n</strong><span class="meta">1 h · 30/07/2026</span><span class="org">Digital Innovation One</span></li>
+      <li><strong>Criação de Workflows no n8n</strong><span class="meta">1 h · 03/08/2026</span><span class="org">Digital Innovation One</span></li>
+      <li><strong>Início no n8n e Primeiros Passos</strong><span class="meta">1 h cada · 20/07/2026</span><span class="org">Digital Innovation One · dois certificados</span></li>
+      <li><strong>Aceleração Santander: Automação na Prática</strong><span class="meta">1 h · 09/07/2026</span><span class="org">Digital Innovation One</span></li>
+    </ul>
+
+    <h3 class="group">Carreira e produto</h3>
+    <ul class="certs">
+      <li><strong>Digital Product Week 2026</strong><span class="meta">18 h · 28 a 30/10/2026</span><span class="org">Tera · liderança, análise de dados, design e inovação</span></li>
+      <li><strong>Profissão: TI do Zero ao Pro</strong><span class="meta">10 h · 17/02/2024</span><span class="org">EBAC</span></li>
+    </ul>
+  </div>
+</section>
+
+
+<section id="atividades">
+  <div class="wrap">
+    <div class="sh"><span class="n">08</span><h2>Atividades práticas da graduação</h2></div>
+    <p class="sub">Trabalhos entregues nas disciplinas, de 2024 a 2025.</p>
+    <div class="acts">
+      <div class="act"><span class="y">2025</span><div><h3>Computação em Nuvem</h3><p>Estudos de caso de migração para a nuvem: modelos SaaS, PaaS e IaaS; serviços da AWS (S3, EC2, RDS, DynamoDB, Elastic Beanstalk e Amplify); escalabilidade; e mitigação de riscos de segurança.</p><div class="tags"><span>AWS</span><span>SaaS, PaaS e IaaS</span><span>Segurança</span></div></div></div>
+      <div class="act"><span class="y">2025</span><div><h3>Desenvolvimento Web: Back End</h3><p>API REST de cadastro de tarefas, com operações de inserção, consulta, atualização e exclusão, testada no Postman e publicada no GitHub.</p><div class="tags"><span>API REST</span><span>Postman</span><span>GitHub</span></div></div></div>
+      <div class="act"><span class="y">2025</span><div><h3>Banco de Dados NoSQL</h3><p>Modelagem em grafo no Neo4j a partir de arquivos JSON de tweets: criação de nós e relacionamentos, identificação da hashtag principal e análise da rede sob um viés escolhido.</p><div class="tags"><span>Neo4j</span><span>Cypher</span><span>JSON</span></div></div></div>
+      <div class="act"><span class="y">2025</span><div><h3>Análise Exploratória de Dados</h3><p>Estatística descritiva, frequências absoluta e relativa, medidas por grupo (média, mediana, desvio padrão e variância) e gráficos de barras e boxplot, com Python e Pandas no Google Colab.</p><div class="tags"><span>Python</span><span>Pandas</span><span>Google Colab</span></div></div></div>
+      <div class="act"><span class="y">2025</span><div><h3>Atividades Extensionistas II: Ensino Web</h3><p>Ensino de lógica de programação em Python a alunos do 6º ano da E.E. Visconde de Taunay, em Santo André, com um programa de gestão financeira em Jupyter Notebook. Alinhado ao Objetivo de Desenvolvimento Sustentável (ODS) 4, Educação de Qualidade.</p><div class="tags"><span>Python</span><span>Jupyter Notebook</span><span>Educação</span></div></div></div>
+      <div class="act"><span class="y">2024</span><div><h3>Banco de Dados Relacional</h3><p>Modelo entidade-relacionamento de uma clínica médica e implementação do banco "Livraria" no MySQL Workbench, com chaves primárias e estrangeiras, restrições NOT NULL e carga de dados.</p><div class="tags"><span>MER</span><span>SQL</span><span>MySQL</span></div></div></div>
+      <div class="act"><span class="y">2024</span><div><h3>Coleta de Requisitos e Modelagem de Banco de Dados</h3><p>Casos de uso em UML, diagrama de classes e modelo conceitual para o sistema de uma startup de produtos agropecuários e pet, com dois perfis de acesso: administrador e funcionário.</p><div class="tags"><span>UML</span><span>Casos de uso</span><span>Modelo conceitual</span></div></div></div>
+      <div class="act"><span class="y">2024</span><div><h3>Fundamentos de Desenvolvimento Web</h3><p>Páginas em HTML e CSS com formulário de contato e página de formação.</p><div class="tags"><span>HTML</span><span>CSS</span></div></div></div>
+      <div class="act"><span class="y">Extensão</span><div><h3>Atividades Extensionistas: Vida tem água, vidas em águas (Ubatuba, SP)</h3><p>Planejamento de uma solução em três fases para a preservação da vida marinha, alinhada aos ODS 14 e 17: site em HTML, bancos de dados SQL em cada esfera de governo e o aplicativo UBAFIS (Ubatuba Fiscaliza), para denúncias e fiscalização.</p><div class="tags"><span>HTML</span><span>SQL</span><span>Python</span><span>Planejamento</span></div></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="experiencia">
+  <div class="wrap">
+    <div class="sh"><span class="n">09</span><h2>Experiência profissional</h2></div>
+    <p class="sub">Antes de atuar em T.I., trabalhei como instrutor de trânsito.</p>
+    <article class="exp">
+      <h3>Instrutor de Trânsito (teórico e prático)</h3>
+      <p class="meta2">Autoescola em Santo André, SP · mar/2020 a out/2021</p>
+      <ul>
+        <li>Mais de 92% dos alunos concluíram o circuito de manobras com êxito, por meio de instrução prática, de orientação clara e do acompanhamento do desempenho.</li>
+        <li>Aulas teóricas e práticas de condução de motocicletas, reforçando procedimentos de segurança, comunicação e cumprimento de normas.</li>
+      </ul>
+    </article>
+  </div>
+</section>
+
+<section id="contato">
+  <div class="wrap">
+    <div class="contact">
+      <h2>Contato</h2>
+      <p>Busco vaga de estágio ou cargo de assistente ou júnior em T.I., para aplicar meus conhecimentos em banco de dados, automação e IA na proteção de dados e sistemas, enquanto me preparo para a pós-graduação em Segurança da Informação.</p>
+      <p class="info">varlei.t.i.analise@gmail.com · (11) 94954-1700 · Santo André, SP</p>
+      <div class="cta" style="margin:0">
+        <a class="btn solid" href="https://www.linkedin.com/in/varleivazquezrueda">LinkedIn</a>
+        <a class="btn" href="https://github.com/VarleiRueda">GitHub</a>
+        <a class="btn" href="mailto:varlei.t.i.analise@gmail.com">E-mail</a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap mono">Varlei Vazquez Rueda · Santo André, SP · atualizado em novembro de 2026</div>
+</footer>
+</body>
+</html>
