@@ -1,520 +1,598 @@
 <!DOCTYPE html>
+<!DOCTYPE html>
+
 <html lang="pt-BR">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Portfólio Varlei Rueda</title>
-<meta name="description" content="Portfólio de Varlei Vazquez Rueda: banco de dados, automação, inteligência artificial e segurança da informação.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@400;500;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="#101d2b" name="theme-color"/>
+<meta content="Portfólio profissional de Varlei Vazquez Rueda, tecnólogo em Banco de Dados pela UNINTER. Projetos com SQL, Python, SQL Server, MySQL, n8n, RPA, análise de dados, IA aplicada e fundamentos de segurança da informação." name="description"/>
+<meta content="website" property="og:type"/>
+<meta content="Varlei Vazquez Rueda | Banco de Dados, SQL, Python e Automação" property="og:title"/>
+<meta content="Projetos técnicos, atividades acadêmicas, formação, certificações e competências em dados, programação e automação." property="og:description"/>
+<meta content="https://varleirueda.github.io" property="og:url"/>
+<title>Varlei Vazquez Rueda | Banco de Dados, SQL, Python e Automação</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&amp;family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
 <style>
-/* Layout: documento técnico em colunas. Cabeçalho com resumo em painel, seções numeradas por evidência. */
-:root{
-  --bg:#f4f6f8;
-  --surface:#ffffff;
-  --ink:#0f1b2d;
-  --muted:#556274;
-  --line:#d3dae3;
-  --accent:#0a6b66;
-  --accent-soft:#e3f2f0;
-  --warm:#b8420f;
-  --display:"Familjen Grotesk",system-ui,sans-serif;
-  --mono:"JetBrains Mono",ui-monospace,Consolas,monospace;
-  color-scheme:light;
-}
-@media (prefers-color-scheme:dark){
-  :root:not([data-theme="light"]){
-    --bg:#0b121c;--surface:#131d2b;--ink:#e8edf3;--muted:#9aa8b8;--line:#263447;--accent:#4fd6c4;--accent-soft:#12302f;--warm:#ff8a5c;
-    color-scheme:dark;
-  }
-}
-:root[data-theme="dark"]{
-  --bg:#0b121c;--surface:#131d2b;--ink:#e8edf3;--muted:#9aa8b8;--line:#263447;--accent:#4fd6c4;--accent-soft:#12302f;--warm:#ff8a5c;
-  color-scheme:dark;
-}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-section[id]{scroll-margin-top:110px}
-body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--display);font-size:17px;line-height:1.6}
-a{color:inherit}
-:focus-visible{outline:3px solid var(--warm);outline-offset:3px}
-.wrap{max-width:1040px;margin:0 auto;padding:0 20px}
-.mono{font-family:var(--mono);font-size:.8rem;letter-spacing:.02em}
-
-header.top{position:sticky;top:0;z-index:5;background:var(--bg);border-bottom:1px solid var(--line)}
-header.top .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;padding-top:12px;padding-bottom:12px}
-header.top .brand{font-weight:700;color:var(--accent)}
-header.top nav{display:flex;gap:18px;flex-wrap:wrap;color:var(--muted)}
-header.top a{text-decoration:none}
-header.top a:hover{color:var(--warm)}
-
-/* abertura */
-.hero{display:grid;grid-template-columns:1.2fr .8fr;gap:44px;padding:64px 20px 48px;align-items:start}
-.eyebrow{color:var(--accent);font-family:var(--mono);font-size:.8rem;letter-spacing:.06em;text-transform:uppercase;margin:0 0 14px;font-weight:700}
-.hero h1{font-size:clamp(2.4rem,6vw,4.4rem);line-height:1.02;letter-spacing:-.035em;margin:0 0 12px;font-weight:700;text-wrap:balance}
-.hero .role{font-size:1.2rem;color:var(--muted);margin:0 0 22px;font-weight:500}
-.hero .lead{font-size:1.1rem;max-width:36em;margin:0 0 28px;text-wrap:pretty}
-.cta{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:28px}
-.btn{display:inline-block;text-decoration:none;font-weight:700;font-size:.95rem;padding:11px 18px;border-radius:6px;border:2px solid var(--accent);color:var(--accent)}
-.btn.solid{background:var(--accent);color:var(--surface)}
-.btn:hover{border-color:var(--warm);background:var(--warm);color:#fff}
-.stats{display:grid;grid-template-columns:repeat(3,auto);gap:0;border:1px solid var(--line);background:var(--surface);border-radius:8px;width:max-content;max-width:100%}
-.stats div{padding:12px 22px;border-right:1px solid var(--line)}
-.stats div:last-child{border-right:0}
-.stats b{display:block;font-size:1.6rem;line-height:1.1;letter-spacing:-.02em}
-.stats span{font-size:.82rem;color:var(--muted)}
-.panel{background:var(--surface);border:1px solid var(--line);border-top:4px solid var(--accent);border-radius:8px;padding:6px 22px 14px}
-.panel h2{font-family:var(--mono);font-size:.78rem;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin:16px 0 4px;font-weight:700}
-.panel dl{margin:0}
-.panel dt{font-family:var(--mono);font-size:.74rem;color:var(--accent);text-transform:uppercase;letter-spacing:.05em;margin-top:14px;font-weight:700}
-.panel dd{margin:2px 0 0;font-size:.97rem}
-@media (max-width:860px){.hero{grid-template-columns:1fr;padding-top:40px}}
-@media (max-width:520px){.stats{grid-template-columns:1fr;width:100%}.stats div{border-right:0;border-bottom:1px solid var(--line)}.stats div:last-child{border-bottom:0}}
-
-section{padding:56px 0;border-top:1px solid var(--line)}
-.sh{display:flex;align-items:baseline;gap:14px;margin:0 0 8px}
-.sh .n{font-family:var(--mono);color:var(--warm);font-weight:700;font-size:.9rem}
-.sh h2{font-size:1.9rem;letter-spacing:-.025em;margin:0;text-wrap:balance}
-.sub{margin:0 0 30px;color:var(--muted);max-width:46em}
-h3.group{font-family:var(--mono);font-size:.78rem;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:.06em;margin:34px 0 12px}
-p{margin:0 0 14px}
-
-/* competências */
-.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:16px}
-.skill{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:20px}
-.skill h3{margin:0 0 12px;font-size:1rem;font-family:var(--mono);color:var(--accent);text-transform:uppercase;letter-spacing:.05em}
-.tags{display:flex;flex-wrap:wrap;gap:6px}
-.tags span{font-family:var(--mono);font-size:.78rem;background:var(--bg);border:1px solid var(--line);padding:3px 9px;border-radius:4px}
-
-/* projetos */
-.cases{display:grid;gap:18px}
-.case{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:24px 26px}
-.case header{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;align-items:baseline;margin-bottom:14px}
-.case h3{margin:0;font-size:1.3rem;letter-spacing:-.015em}
-.badge{font-family:var(--mono);font-size:.74rem;font-weight:700;padding:3px 10px;border-radius:4px;border:1px solid var(--accent);color:var(--accent);white-space:nowrap}
-.badge.wip{border-color:var(--warm);color:var(--warm)}
-.case dl{display:grid;grid-template-columns:130px 1fr;gap:10px 18px;margin:0}
-.case dt{font-family:var(--mono);font-size:.74rem;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);padding-top:4px;font-weight:700}
-.case dd{margin:0}
-@media (max-width:620px){.case dl{grid-template-columns:1fr;gap:2px}.case dd{margin-bottom:10px}}
-
-/* segurança */
-.tablewrap{overflow-x:auto;border:1px solid var(--line);border-radius:8px;background:var(--surface)}
-table.ev{border-collapse:collapse;width:100%;min-width:560px}
-table.ev th,table.ev td{text-align:left;padding:14px 18px;border-bottom:1px solid var(--line);vertical-align:top}
-table.ev tr:last-child td{border-bottom:0}
-table.ev th{font-family:var(--mono);font-size:.74rem;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);background:var(--bg)}
-table.ev td:first-child{font-weight:700;width:30%}
-.steps{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid var(--line);background:var(--surface);border-radius:8px;overflow:hidden;margin-bottom:26px}
-.step{padding:20px 22px;border-right:1px solid var(--line)}
-.step:last-child{border-right:0}
-.step .st{display:inline-block;font-family:var(--mono);font-size:.72rem;font-weight:700;padding:3px 9px;border-radius:4px;margin-bottom:10px}
-.step.done .st{background:var(--accent);color:var(--surface)}
-.step.now .st{background:var(--warm);color:#fff}
-.step.next .st{border:1px dashed var(--muted);color:var(--muted)}
-.step h3{margin:0 0 4px;font-size:1.05rem;line-height:1.3}
-.step p{margin:0;color:var(--muted);font-size:.93rem}
-@media (max-width:720px){.steps{grid-template-columns:1fr}.step{border-right:0;border-bottom:1px solid var(--line)}.step:last-child{border-bottom:0}}
-
-/* IA */
-.ai{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px}
-.aicard{background:var(--surface);border:1px solid var(--line);border-left:4px solid var(--accent);border-radius:8px;padding:20px 22px}
-.aicard .k{font-family:var(--mono);font-size:.74rem;color:var(--warm);font-weight:700;letter-spacing:.05em}
-.aicard h3{margin:4px 0 8px;font-size:1.08rem;line-height:1.3}
-.aicard p{margin:0;color:var(--muted);font-size:.97rem}
-
-/* listas de certificados e disciplinas */
-.certs{list-style:none;margin:0;padding:0;border:1px solid var(--line);background:var(--surface);border-radius:8px;overflow:hidden}
-.certs li{display:grid;grid-template-columns:1fr auto;gap:2px 16px;padding:11px 18px;border-bottom:1px solid var(--line)}
-.certs li:last-child{border-bottom:0}
-.certs strong{font-weight:500}
-.certs .meta{font-family:var(--mono);font-size:.75rem;color:var(--muted);text-align:right;white-space:nowrap;font-variant-numeric:tabular-nums}
-.certs .org{grid-column:1/-1;font-size:.88rem;color:var(--muted)}
-.certs.hl{border-color:var(--accent);border-width:2px}
-@media (max-width:520px){.certs li{grid-template-columns:1fr}.certs .meta{text-align:left;white-space:normal}}
-.twocol{display:grid;grid-template-columns:repeat(auto-fit,minmax(310px,1fr));gap:0 24px;align-items:start}
-
-/* atividades acadêmicas */
-.acts{border:1px solid var(--line);background:var(--surface);border-radius:8px;overflow:hidden}
-.act{display:grid;grid-template-columns:70px 1fr;gap:4px 18px;padding:16px 20px;border-bottom:1px solid var(--line)}
-.act:last-child{border-bottom:0}
-.act .y{font-family:var(--mono);font-size:.78rem;color:var(--muted);font-weight:700;padding-top:3px}
-.act h3{margin:0 0 4px;font-size:1.02rem;line-height:1.35}
-.act p{margin:0 0 8px;color:var(--muted);font-size:.96rem}
-.act .tags{margin:0}
-@media (max-width:560px){.act{grid-template-columns:1fr}}
-
-.exp{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:22px 26px}
-.exp h3{margin:0 0 2px;font-size:1.2rem}
-.exp .meta2{color:var(--muted);margin:0 0 12px;font-size:.95rem}
-.exp ul{margin:0;padding-left:1.2em}
-.exp li{margin:5px 0}
-
-.contact{background:var(--ink);color:var(--bg);border-radius:10px;padding:36px}
-.contact h2{margin:0 0 10px;font-size:1.8rem;letter-spacing:-.02em}
-.contact p{max-width:42em;font-size:1.05rem}
-.contact .info{font-family:var(--mono);font-size:.9rem;margin:0 0 20px}
-.contact .btn{border-color:var(--bg);color:var(--bg)}
-.contact .btn.solid{background:var(--bg);color:var(--ink)}
-.contact .btn:hover{background:var(--warm);border-color:var(--warm);color:#fff}
-
-footer{border-top:1px solid var(--line);padding:26px 0 56px;color:var(--muted)}
-@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
-@media print{
-  header.top{position:static}
-  header.top nav{display:none}
-  section{padding:24px 0;break-inside:avoid-page}
-  .case,.act,.aicard,.skill{break-inside:avoid}
-  body{background:#fff}
-}
-</style>
-</head>
+    :root {
+      color-scheme: light;
+      --bg: #f4f7f8;
+      --surface: #ffffff;
+      --surface-2: #eaf0f2;
+      --ink: #142333;
+      --muted: #5b6a78;
+      --line: #d7e0e4;
+      --navy: #101d2b;
+      --navy-2: #182b3d;
+      --accent: #087f73;
+      --accent-2: #11a18e;
+      --accent-soft: #e0f2ee;
+      --orange: #d87845;
+      --shadow: 0 18px 48px rgba(15, 31, 45, .08);
+      --display: "Manrope", system-ui, sans-serif;
+      --mono: "DM Mono", Consolas, monospace;
+      --wrap: 1160px;
+    }
+    :root[data-theme="dark"] {
+      color-scheme: dark;
+      --bg: #0c1520;
+      --surface: #121f2d;
+      --surface-2: #1a2b3b;
+      --ink: #e9f0f4;
+      --muted: #a4b3bf;
+      --line: #2a3c4c;
+      --navy: #08111b;
+      --navy-2: #122334;
+      --accent: #4bd0b8;
+      --accent-2: #79e0ce;
+      --accent-soft: #153a38;
+      --orange: #f0a071;
+      --shadow: 0 18px 48px rgba(0, 0, 0, .22);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 90px; }
+    body { margin: 0; background: var(--bg); color: var(--ink); font: 16px/1.7 var(--display); -webkit-font-smoothing: antialiased; }
+    a { color: inherit; }
+    button { font: inherit; }
+    ::selection { background: var(--accent-soft); color: var(--ink); }
+    :focus-visible { outline: 3px solid var(--orange); outline-offset: 4px; }
+    .skip-link { position: fixed; z-index: 100; top: 10px; left: 10px; transform: translateY(-150%); padding: 10px 14px; background: var(--surface); color: var(--ink); border-radius: 8px; }
+    .skip-link:focus { transform: translateY(0); }
+    .container { width: min(var(--wrap), calc(100% - 44px)); margin-inline: auto; }
+    .mono { font-family: var(--mono); }
+    .eyebrow { margin: 0 0 14px; color: var(--accent-2); font: 500 .76rem/1.5 var(--mono); letter-spacing: .12em; text-transform: uppercase; }
+    .topbar { position: sticky; z-index: 50; top: 0; background: color-mix(in srgb, var(--bg) 91%, transparent); backdrop-filter: blur(16px); border-bottom: 1px solid var(--line); }
+    .topbar-inner { min-height: 72px; display: flex; align-items: center; justify-content: space-between; gap: 22px; }
+    .brand { display: inline-flex; align-items: center; gap: 11px; text-decoration: none; font-weight: 800; letter-spacing: -.04em; white-space: nowrap; }
+    .brand-mark { display: grid; place-items: center; width: 36px; height: 36px; border-radius: 10px; background: var(--accent); color: #fff; font: 500 .8rem var(--mono); letter-spacing: -.08em; }
+    .nav { display: flex; align-items: center; justify-content: flex-end; gap: clamp(10px, 1.5vw, 22px); flex-wrap: wrap; }
+    .nav a { color: var(--muted); text-decoration: none; font-size: .78rem; font-weight: 700; transition: color .2s ease; }
+    .nav a:hover { color: var(--accent); }
+    .theme-toggle { border: 1px solid var(--line); background: var(--surface); color: var(--ink); border-radius: 9px; width: 38px; height: 38px; display: inline-grid; place-items: center; cursor: pointer; }
+    .hero { position: relative; overflow: hidden; background: var(--navy); color: #edf4f6; }
+    .hero::before { content: ""; position: absolute; inset: 0; pointer-events: none; background-image: linear-gradient(rgba(255,255,255,.035) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.035) 1px, transparent 1px); background-size: 42px 42px; mask-image: linear-gradient(110deg, black, transparent 78%); }
+    .hero::after { content: ""; position: absolute; width: 560px; height: 560px; border-radius: 50%; right: -210px; top: -290px; background: radial-gradient(circle, rgba(17,161,142,.25), transparent 68%); pointer-events: none; }
+    .hero-inner { position: relative; z-index: 1; display: grid; grid-template-columns: minmax(0, 1.45fr) minmax(270px, .72fr); gap: 66px; align-items: center; padding-block: clamp(64px, 9vw, 112px); }
+    .hero h1 { max-width: 820px; margin: 0; font-size: clamp(2.75rem, 6.8vw, 5.7rem); line-height: .99; letter-spacing: -.075em; font-weight: 800; }
+    .hero h1 span { color: #67d8c4; }
+    .hero-role { max-width: 760px; margin: 24px 0 14px; color: #c6d4dd; font-size: clamp(1.08rem, 2vw, 1.35rem); font-weight: 600; }
+    .hero-copy { max-width: 720px; margin: 0; color: #aebdc8; font-size: 1rem; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 11px; margin-top: 30px; }
+    .button { display: inline-flex; align-items: center; justify-content: center; gap: 9px; padding: 12px 17px; min-height: 46px; border-radius: 9px; border: 1px solid transparent; text-decoration: none; font-size: .88rem; font-weight: 800; transition: transform .2s ease, background .2s ease, border-color .2s ease; cursor: pointer; }
+    .button:hover { transform: translateY(-2px); }
+    .button-primary { background: #3bc4ad; color: #071a1b; }
+    .button-ghost { border-color: rgba(226,239,243,.28); color: #eef6f6; background: rgba(255,255,255,.035); }
+    .hero-note { margin: 20px 0 0; color: #8ea2af; font: .72rem/1.6 var(--mono); }
+    .profile-card { padding: 25px; border: 1px solid rgba(224,241,244,.16); border-radius: 18px; background: linear-gradient(155deg, rgba(255,255,255,.095), rgba(255,255,255,.035)); box-shadow: 0 24px 60px rgba(0,0,0,.18); }
+    .profile-card-label { color: #67d8c4; font: 500 .7rem var(--mono); letter-spacing: .12em; text-transform: uppercase; }
+    .profile-card h2 { margin: 10px 0 20px; font-size: 1.18rem; letter-spacing: -.03em; }
+    .profile-fact { padding: 13px 0; border-top: 1px solid rgba(224,241,244,.13); }
+    .profile-fact small { display: block; margin-bottom: 3px; color: #8ea2af; font: .67rem var(--mono); text-transform: uppercase; letter-spacing: .08em; }
+    .profile-fact strong { font-size: .9rem; font-weight: 700; }
+    .hero-metrics { display: grid; grid-template-columns: repeat(4, 1fr); border-bottom: 1px solid var(--line); background: var(--surface); }
+    .metric { padding: 23px 26px; text-align: center; border-right: 1px solid var(--line); }
+    .metric:last-child { border-right: 0; }
+    .metric strong { display: block; color: var(--accent); font-size: 1.8rem; line-height: 1.2; letter-spacing: -.06em; }
+    .metric span { display: block; margin-top: 4px; color: var(--muted); font: .68rem var(--mono); text-transform: uppercase; letter-spacing: .06em; }
+    section { padding-block: clamp(64px, 8vw, 94px); border-bottom: 1px solid var(--line); }
+    .section-head { display: flex; gap: 22px; align-items: flex-start; margin-bottom: 36px; }
+    .section-index { flex: 0 0 auto; padding-top: 8px; color: var(--orange); font: .76rem var(--mono); }
+    .section-head h2 { margin: 0; font-size: clamp(1.8rem, 4vw, 2.8rem); line-height: 1.1; letter-spacing: -.065em; }
+    .section-head p { max-width: 720px; margin: 10px 0 0; color: var(--muted); font-size: .96rem; }
+    .summary-grid { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(260px, .7fr); gap: 28px; }
+    .summary-copy { font-size: 1.07rem; line-height: 1.85; }
+    .summary-copy p { margin: 0 0 17px; }
+    .focus-card { padding: 25px; border: 1px solid var(--line); background: var(--surface); border-radius: 14px; box-shadow: var(--shadow); }
+    .focus-card h3 { margin: 0 0 12px; font-size: 1rem; }
+    .focus-card p { margin: 0 0 16px; color: var(--muted); font-size: .9rem; }
+    .focus-list { display: grid; gap: 10px; margin: 0; padding: 0; list-style: none; }
+    .focus-list li { display: flex; gap: 10px; align-items: flex-start; font-size: .88rem; }
+    .focus-list li::before { content: "↗"; color: var(--accent); font-family: var(--mono); font-weight: 700; }
+    .callout { margin-top: 25px; padding: 18px 21px; border-left: 3px solid var(--accent); background: var(--accent-soft); border-radius: 0 10px 10px 0; color: var(--ink); font-size: .91rem; }
+    .skills-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 15px; }
+    .skill-card { min-height: 190px; padding: 22px; border: 1px solid var(--line); border-radius: 13px; background: var(--surface); transition: transform .2s ease, box-shadow .2s ease; }
+    .skill-card:hover { transform: translateY(-3px); box-shadow: var(--shadow); }
+    .skill-card .skill-no { color: var(--orange); font: .7rem var(--mono); }
+    .skill-card h3 { margin: 8px 0 12px; font-size: 1rem; letter-spacing: -.025em; }
+    .skill-card p { margin: 0; color: var(--muted); font-size: .84rem; }
+    .tags { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 15px; }
+    .tag { display: inline-flex; align-items: center; padding: 5px 9px; border: 1px solid var(--line); border-radius: 6px; background: var(--surface-2); color: var(--ink); font: .68rem var(--mono); }
+    .tag-accent { border-color: color-mix(in srgb, var(--accent) 30%, var(--line)); background: var(--accent-soft); color: var(--accent); }
+    .section-note { margin: 18px 0 0; color: var(--muted); font-size: .8rem; }
+    .projects-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 17px; }
+    .project-card { position: relative; display: flex; flex-direction: column; padding: 26px; min-height: 100%; border: 1px solid var(--line); border-radius: 15px; background: var(--surface); box-shadow: 0 8px 26px rgba(15,31,45,.035); }
+    .project-card.featured { border-top: 3px solid var(--accent); }
+    .project-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 16px; }
+    .project-code { color: var(--orange); font: .7rem var(--mono); }
+    .status { display: inline-flex; align-items: center; gap: 7px; padding: 5px 9px; border: 1px solid var(--line); border-radius: 999px; color: var(--muted); font: .64rem var(--mono); white-space: nowrap; }
+    .status::before { content: ""; width: 6px; height: 6px; background: var(--accent); border-radius: 50%; }
+    .status-progress::before { background: var(--orange); }
+    .project-card h3 { margin: 14px 0 8px; font-size: 1.25rem; line-height: 1.25; letter-spacing: -.045em; }
+    .project-intro { margin: 0 0 17px; color: var(--muted); font-size: .9rem; }
+    .project-detail { padding-top: 13px; margin-top: auto; border-top: 1px solid var(--line); }
+    .project-detail strong { display: block; margin-bottom: 4px; color: var(--accent); font: .66rem var(--mono); letter-spacing: .08em; text-transform: uppercase; }
+    .project-detail p { margin: 0; font-size: .84rem; }
+    .project-tags { margin-top: 16px; }
+    .mini-projects { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; margin-top: 17px; }
+    .mini-project { padding: 18px 20px; border: 1px dashed var(--line); border-radius: 12px; }
+    .mini-project h3 { margin: 0 0 5px; font-size: .91rem; }
+    .mini-project p { margin: 0; color: var(--muted); font-size: .8rem; }
+    .academic-list { display: grid; gap: 0; border: 1px solid var(--line); border-radius: 14px; background: var(--surface); overflow: hidden; }
+    .academic-item { display: grid; grid-template-columns: 90px minmax(0, 1fr) minmax(145px, .42fr); gap: 18px; padding: 20px 22px; border-bottom: 1px solid var(--line); }
+    .academic-item:last-child { border-bottom: 0; }
+    .academic-year { color: var(--accent); font: .72rem var(--mono); padding-top: 3px; }
+    .academic-item h3 { margin: 0 0 5px; font-size: .97rem; letter-spacing: -.02em; }
+    .academic-item p { margin: 0; color: var(--muted); font-size: .83rem; }
+    .academic-tools { align-self: center; color: var(--muted); font: .65rem/1.8 var(--mono); text-align: right; }
+    .security-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+    .security-card { padding: 23px; border: 1px solid var(--line); border-radius: 13px; background: var(--surface); }
+    .security-card .label { color: var(--orange); font: .68rem var(--mono); letter-spacing: .08em; text-transform: uppercase; }
+    .security-card h3 { margin: 8px 0; font-size: 1.05rem; }
+    .security-card p, .security-card li { color: var(--muted); font-size: .85rem; }
+    .security-card ul { margin: 10px 0 0; padding-left: 18px; }
+    .security-card li { margin: 5px 0; }
+    .security-progress { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 18px; }
+    .progress-item { padding: 19px; border: 1px solid var(--line); border-radius: 12px; background: var(--surface); }
+    .progress-item span { display: block; color: var(--accent); font: .65rem var(--mono); text-transform: uppercase; }
+    .progress-item strong { display: block; margin: 7px 0 4px; font-size: .92rem; }
+    .progress-item p { margin: 0; color: var(--muted); font-size: .77rem; }
+    .ai-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+    .ai-card { padding: 21px; border: 1px solid var(--line); border-radius: 12px; background: var(--surface); }
+    .ai-card span { color: var(--orange); font: .66rem var(--mono); }
+    .ai-card h3 { margin: 7px 0; font-size: .98rem; }
+    .ai-card p { margin: 0; color: var(--muted); font-size: .83rem; }
+    .grades-wrap { overflow: hidden; border: 1px solid var(--line); border-radius: 14px; background: var(--surface); }
+    .grade-group { padding: 20px 22px; border-bottom: 1px solid var(--line); }
+    .grade-group:last-child { border-bottom: 0; }
+    .grade-group h3 { margin: 0 0 13px; color: var(--accent); font: 500 .72rem var(--mono); letter-spacing: .08em; text-transform: uppercase; }
+    .grade-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 28px; margin: 0; padding: 0; list-style: none; }
+    .grade-list li { display: flex; justify-content: space-between; gap: 12px; padding: 9px 0; border-bottom: 1px solid var(--line); font-size: .81rem; }
+    .grade-list li:nth-last-child(-n+2) { border-bottom: 0; }
+    .grade-list em { color: var(--muted); font: .68rem var(--mono); white-space: nowrap; font-style: normal; }
+    .cert-groups { display: grid; gap: 12px; }
+    details.cert-group { border: 1px solid var(--line); border-radius: 13px; background: var(--surface); overflow: hidden; }
+    details.cert-group summary { display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 17px 20px; cursor: pointer; list-style: none; font-weight: 800; font-size: .93rem; }
+    details.cert-group summary::-webkit-details-marker { display: none; }
+    details.cert-group summary::after { content: "+"; color: var(--accent); font: 1.2rem var(--mono); }
+    details.cert-group[open] summary::after { content: "−"; }
+    .cert-count { margin-left: auto; color: var(--muted); font: .65rem var(--mono); }
+    .cert-list { margin: 0; padding: 0 20px 10px; list-style: none; }
+    .cert-list li { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 4px 18px; padding: 11px 0; border-top: 1px solid var(--line); }
+    .cert-list strong { font-size: .82rem; font-weight: 700; }
+    .cert-list .cert-meta { align-self: start; color: var(--muted); font: .65rem var(--mono); text-align: right; white-space: nowrap; }
+    .cert-list .cert-org { grid-column: 1 / -1; color: var(--muted); font-size: .74rem; }
+    .experience-card { display: grid; grid-template-columns: minmax(180px, .45fr) minmax(0, 1fr); gap: 26px; padding: 28px; border: 1px solid var(--line); border-radius: 14px; background: var(--surface); }
+    .experience-meta { color: var(--muted); font: .7rem/1.8 var(--mono); }
+    .experience-card h3 { margin: 0 0 5px; font-size: 1.18rem; }
+    .experience-card .role-date { margin: 0 0 13px; color: var(--accent); font-size: .82rem; font-weight: 800; }
+    .experience-card ul { margin: 0; padding-left: 19px; }
+    .experience-card li { margin: 7px 0; font-size: .87rem; }
+    .transfer-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 15px; }
+    .transfer-item { padding: 16px; border-radius: 10px; background: var(--surface-2); }
+    .transfer-item strong { display: block; font-size: .8rem; }
+    .transfer-item span { display: block; margin-top: 4px; color: var(--muted); font-size: .73rem; }
+    .contact-section { padding-block: 70px; background: var(--navy); color: #edf4f6; }
+    .contact-inner { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(260px, .8fr); align-items: center; gap: 40px; }
+    .contact-section h2 { margin: 0 0 13px; font-size: clamp(2rem, 4vw, 3.4rem); line-height: 1.07; letter-spacing: -.06em; }
+    .contact-section p { max-width: 680px; color: #afbdc8; font-size: .94rem; }
+    .contact-details { display: grid; gap: 12px; }
+    .contact-details a { color: #e9f5f4; text-decoration: none; font-size: .87rem; }
+    .contact-details a:hover { color: #67d8c4; }
+    .contact-label { display: block; margin-bottom: 3px; color: #79909f; font: .65rem var(--mono); text-transform: uppercase; }
+    footer { padding: 22px 0 34px; color: var(--muted); font: .68rem var(--mono); }
+    .footer-inner { display: flex; justify-content: space-between; gap: 15px; flex-wrap: wrap; }
+    .back-top { text-decoration: none; color: var(--accent); }
+    @media (max-width: 940px) {
+      .hero-inner { gap: 34px; }
+      .skills-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .nav { gap: 10px; }
+      .nav a { font-size: .72rem; }
+    }
+    @media (max-width: 760px) {
+      .topbar-inner { min-height: 64px; align-items: center; }
+      .nav { order: 3; width: 100%; flex-wrap: nowrap; justify-content: flex-start; overflow-x: auto; padding: 0 0 10px; scrollbar-width: thin; }
+      .topbar-inner { flex-wrap: wrap; padding-top: 10px; }
+      .nav a { white-space: nowrap; }
+      .hero-inner, .summary-grid, .contact-inner { grid-template-columns: 1fr; }
+      .hero-inner { padding-block: 62px; }
+      .profile-card { max-width: 560px; }
+      .projects-grid, .security-grid, .ai-grid { grid-template-columns: 1fr; }
+      .academic-item { grid-template-columns: 70px minmax(0, 1fr); }
+      .academic-tools { grid-column: 2; text-align: left; }
+      .security-progress { grid-template-columns: 1fr; }
+      .experience-card { grid-template-columns: 1fr; gap: 10px; }
+      .experience-meta { order: 2; }
+      .contact-inner { gap: 15px; }
+    }
+    @media (max-width: 540px) {
+      .container { width: min(100% - 30px, var(--wrap)); }
+      .hero h1 { font-size: clamp(2.55rem, 13vw, 4rem); }
+      .hero-metrics { grid-template-columns: 1fr; }
+      .metric { display: flex; align-items: baseline; justify-content: space-between; gap: 15px; padding: 14px 20px; text-align: left; border-right: 0; border-bottom: 1px solid var(--line); }
+      .metric:last-child { border-bottom: 0; }
+      .metric strong { font-size: 1.4rem; }
+      .metric span { text-align: right; }
+      .section-head { gap: 13px; }
+      .skills-grid, .mini-projects, .grade-list, .transfer-grid { grid-template-columns: 1fr; }
+      .skill-card { min-height: auto; }
+      .academic-item { grid-template-columns: 1fr; gap: 5px; padding: 17px; }
+      .academic-tools { grid-column: 1; }
+      .grade-list li:nth-last-child(-n+2) { border-bottom: 1px solid var(--line); }
+      .grade-list li:last-child { border-bottom: 0; }
+      .cert-list li { grid-template-columns: 1fr; gap: 3px; }
+      .cert-list .cert-meta { text-align: left; }
+      .contact-section { padding-block: 58px; }
+      .footer-inner { display: grid; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; }
+    }
+    @media print {
+      :root { --bg: #fff; --surface: #fff; --surface-2: #f3f5f6; --ink: #111; --muted: #444; --line: #ccc; }
+      .topbar, .hero-actions, .theme-toggle, .back-top { display: none !important; }
+      .hero { background: #101d2b !important; print-color-adjust: exact; }
+      .hero-inner { padding-block: 35px; }
+      section { padding-block: 28px; break-inside: auto; }
+      .project-card, .skill-card, .academic-item, .grade-group, .experience-card { break-inside: avoid; }
+      details.cert-group { break-inside: avoid; }
+      details.cert-group > * { display: block !important; }
+      .contact-section { print-color-adjust: exact; }
+      a { text-decoration: none; }
+    }
+  </style>
+<link href="https://varleirueda.github.io" rel="canonical"/></head>
 <body>
-<header class="top">
-  <div class="wrap mono">
-    <span class="brand">Varlei Vazquez Rueda</span>
-    <nav aria-label="Seções">
-      <a href="#resumo">resumo</a>
-      <a href="#competencias">competências</a>
-      <a href="#projetos">projetos</a>
-      <a href="#seguranca">segurança</a>
-      <a href="#ia">IA aplicada</a>
-      <a href="#formacao">formação</a>
-      <a href="#certificados">certificações</a>
-      <a href="#atividades">atividades</a>
-      <a href="#experiencia">experiência</a>
-      <a href="#contato">contato</a>
-    </nav>
-  </div>
+<a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+<header class="topbar">
+<div class="container topbar-inner">
+<a aria-label="Voltar ao início" class="brand" href="#inicio">
+<span class="brand-mark">VR</span>
+<span>VARLEI RUEDA</span>
+</a>
+<nav aria-label="Navegação principal" class="nav">
+<a href="#sobre">Perfil</a>
+<a href="#competencias">Competências</a>
+<a href="#projetos">Projetos</a>
+<a href="#academicos">Atividades acadêmicas</a>
+<a href="#seguranca">Segurança</a>
+<a href="#ia">IA aplicada</a><a href="#formacao">Formação</a>
+<a href="#certificacoes">Certificações</a>
+<a href="#experiencia">Experiência</a>
+<a href="#contato">Contato</a>
+</nav>
+<button aria-label="Alternar tema claro ou escuro" class="theme-toggle" id="themeToggle" title="Alternar tema" type="button">◐</button>
+</div>
 </header>
-
-<main>
-<div class="wrap hero">
-  <div>
-    <p class="eyebrow">Banco de dados · Automação · IA · Segurança da informação</p>
-    <h1>Varlei Vazquez Rueda</h1>
-    <p class="role">Analista e programador de banco de dados</p>
-    <p class="lead">Graduado em Tecnologia em Banco de Dados pela UNINTER, com experiência prática em SQL, Python e automação de processos. Estudo cibersegurança e farei pós-graduação em Segurança da Informação. Busco vaga de estágio ou cargo de assistente ou júnior em T.I.</p>
-    <div class="cta">
-      <a class="btn solid" href="https://www.linkedin.com/in/varleivazquezrueda">LinkedIn</a>
-      <a class="btn" href="https://github.com/VarleiRueda">GitHub</a>
-      <a class="btn" href="mailto:varlei.t.i.analise@gmail.com">E-mail</a>
-    </div>
-    <div class="stats">
-      <div><b>46</b><span>certificados</span></div>
-      <div><b>410 h</b><span>de formação</span></div>
-      <div><b>14</b><span>certificados de n8n</span></div>
-    </div>
-  </div>
-  <aside class="panel" aria-label="Resumo técnico">
-    <h2>Resumo técnico</h2>
-    <dl>
-      <dt>Formação</dt><dd>Tecnologia em Banco de Dados, UNINTER (concluída em 2026)</dd>
-      <dt>Em andamento</dt><dd>Cibersegurança, Digital Innovation One e Santander</dd>
-      <dt>Próximo passo</dt><dd>Pós-graduação em Segurança da Informação</dd>
-      <dt>Bancos de dados</dt><dd>SQL Server, MySQL, SQLite e Neo4j</dd>
-      <dt>Programação</dt><dd>Python, SQL, JavaScript e PowerShell</dd>
-      <dt>Automação e IA</dt><dd>n8n, RPA com Python, Docker e modelos Claude e Gemini</dd>
-      <dt>Objetivo</dt><dd>Estágio ou cargo de assistente ou júnior em T.I.</dd>
-    </dl>
-  </aside>
+<main id="conteudo">
+<div class="hero" id="inicio">
+<div class="container hero-inner">
+<div>
+<p class="eyebrow">Banco de dados · SQL · Python · Automação</p>
+<h1>Varlei Vazquez <span>Rueda.</span></h1>
+<p class="hero-role">Tecnólogo em Banco de Dados | SQL, Python, automação de processos e análise de dados</p>
+<p class="hero-copy">Tecnólogo em Banco de Dados pela UNINTER, com formação concluída em 2026. Desenvolvo projetos pessoais e acadêmicos com SQL, Python, integração e tratamento de dados, automação de processos, APIs e inteligência artificial aplicada. Complemento essa base com estudos em cibersegurança e proteção da informação.</p>
+<div class="hero-actions">
+<a class="button button-primary" href="mailto:varlei.t.i.analise@gmail.com">Entrar em contato <span aria-hidden="true">↗</span></a>
+<a class="button button-ghost" href="https://github.com/VarleiRueda" rel="noopener noreferrer" target="_blank">GitHub <span aria-hidden="true">↗</span></a>
+<a class="button button-ghost" href="https://www.linkedin.com/in/varleivazquezrueda" rel="noopener noreferrer" target="_blank">LinkedIn <span aria-hidden="true">↗</span></a>
+</div>
+<p class="hero-note">SANTO ANDRÉ · SÃO PAULO · BRASIL   /   EM BUSCA DE OPORTUNIDADE DE ENTRADA EM TI</p>
+</div>
+<aside aria-label="Resumo profissional" class="profile-card">
+<span class="profile-card-label">Perfil profissional</span>
+<h2>Conhecimento aplicado em projetos e atividades acadêmicas.</h2>
+<div class="profile-fact"><small>Formação</small><strong>Tecnologia em Banco de Dados · UNINTER · concluída em 2026</strong></div>
+<div class="profile-fact"><small>Foco técnico</small><strong>SQL, Python, integração de dados e automação</strong></div>
+<div class="profile-fact"><small>Estudos complementares</small><strong>IA aplicada, análise de dados e fundamentos de cibersegurança</strong></div>
+<div class="profile-fact"><small>Objetivo</small><strong>Assistente ou júnior; estágio/trainee quando elegíveis</strong></div>
+</aside>
+</div>
+</div>
+<div aria-label="Indicadores de formação e projetos" class="hero-metrics">
+<div class="container" style="display:contents">
+<div class="metric"><strong>46+</strong><span>Certificados no currículo</span></div>
+<div class="metric"><strong>410+ h</strong><span>Formação complementar</span></div>
+<div class="metric"><strong>239 h</strong><span>Python · Hashtag Treinamentos</span></div>
+<div class="metric"><strong>14</strong><span>Certificados em n8n</span></div>
+</div></div>
+<section id="sobre">
+<div class="container">
+<div class="section-head">
+<span class="section-index">01 / PERFIL</span>
+<div><h2>Conhecimento técnico com aplicação prática.</h2><p>Formação em banco de dados, projetos de automação e desenvolvimento contínuo em tecnologia.</p></div>
+</div>
+<div class="summary-grid">
+<div class="summary-copy">
+<p>Sou tecnólogo em Banco de Dados pela UNINTER, com formação concluída em 2026. Consolidei conhecimentos em SQL, SQL Server, MySQL e Python por meio de projetos pessoais, atividades acadêmicas e cursos, incluindo rotinas de integração e tratamento de dados.</p>
+<p>Também desenvolvi automações com n8n, PyAutoGUI e PowerShell, além de um agente de IA integrado ao Gemini Flash. No projeto Sentinela, atualmente em desenvolvimento, aplico Python, banco de dados e IA em uma iniciativa pessoal de monitoramento do próprio computador.</p>
+<p>Meu foco de entrada no mercado está em banco de dados, SQL, dados e automação. Também tenho interesse em suporte a sistemas e em oportunidades iniciais relacionadas à segurança da informação, área na qual continuo estudando. Quero contribuir com raciocínio analítico, investigação de problemas, organização e aprendizagem contínua.</p>
+<div class="callout"><strong>Como ler este portfólio:</strong> cada atividade está identificada pelo seu contexto — projeto pessoal, atividade acadêmica, curso ou estudo em andamento. Os status informam o que foi implementado e o que ainda está em desenvolvimento.</div>
+</div>
+<aside class="focus-card">
+<h3>Áreas e funções de interesse</h3>
+<p>Busco uma oportunidade de entrada compatível com minha formação e com as competências que venho desenvolvendo.</p>
+<ul class="focus-list"><li>Assistente ou analista júnior de banco de dados e SQL</li><li>Assistente de dados, análise de dados júnior e BI</li><li>Automação de processos, RPA e integração de sistemas</li><li>Suporte a sistemas e service desk de software (N1)</li><li>Oportunidades de entrada em segurança da informação, compatíveis com minha formação em andamento</li><li>Estágio ou trainee quando os critérios da vaga permitirem</li></ul>
+</aside>
+</div>
+</div>
+</section>
+<section id="competencias">
+<div class="container">
+<div class="section-head">
+<span class="section-index">02 / COMPETÊNCIAS</span>
+<div><h2>Ferramentas, linguagens e fundamentos.</h2><p>Tecnologias e fundamentos reunidos a partir de projetos pessoais, atividades acadêmicas e cursos. As evidências de aplicação aparecem nas seções de projetos e atividades; a inclusão de uma ferramenta não significa experiência profissional ou domínio avançado.</p></div>
+</div>
+<div class="skills-grid">
+<article class="skill-card"><span class="skill-no">01 — DADOS</span><h3>Bancos de dados e modelagem</h3><p>Consultas e atividades com bancos relacionais e NoSQL, modelagem e organização de estruturas de dados.</p><div class="tags"><span class="tag tag-accent">SQL</span><span class="tag">SQL Server</span><span class="tag">MySQL</span><span class="tag">SQLite</span><span class="tag">Neo4j</span><span class="tag">Cypher</span><span class="tag">MER</span><span class="tag">UML</span></div></article>
+<article class="skill-card"><span class="skill-no">02 — DESENVOLVIMENTO</span><h3>Programação e desenvolvimento</h3><p>Programação aplicada a tratamento de dados, automações, lógica, APIs e páginas web.</p><div class="tags"><span class="tag tag-accent">Python</span><span class="tag">Pandas</span><span class="tag">NumPy</span><span class="tag">Pygame</span><span class="tag">JavaScript</span><span class="tag">PowerShell</span><span class="tag">HTML</span><span class="tag">CSS</span></div></article>
+<article class="skill-card"><span class="skill-no">03 — DADOS E BI</span><h3>Análise e visualização de dados</h3><p>Estatística descritiva, exploração de dados, análise por grupos e construção de gráficos.</p><div class="tags"><span class="tag tag-accent">Power BI</span><span class="tag">Análise exploratória</span><span class="tag">Média e mediana</span><span class="tag">Desvio padrão</span><span class="tag">Variância</span><span class="tag">Boxplot</span><span class="tag">Google Colab</span></div></article>
+<article class="skill-card"><span class="skill-no">04 — AUTOMAÇÃO</span><h3>Automação e RPA</h3><p>Fluxos automatizados, integrações, automação de interface e empacotamento de aplicações para Windows.</p><div class="tags"><span class="tag tag-accent">n8n</span><span class="tag">Webhooks</span><span class="tag">APIs</span><span class="tag">PyAutoGUI</span><span class="tag">PyInstaller</span><span class="tag">Fluxos condicionais</span></div></article>
+<article class="skill-card"><span class="skill-no">05 — IA APLICADA</span><h3>Inteligência artificial</h3><p>Uso e integração de modelos de linguagem em fluxos e projetos, com validação dos resultados gerados.</p><div class="tags"><span class="tag tag-accent">Agentes de IA</span><span class="tag">Claude</span><span class="tag">Google Gemini</span><span class="tag">ChatGPT</span><span class="tag">NotebookLM</span><span class="tag">LLMs</span><span class="tag">Engenharia de prompts</span></div></article>
+<article class="skill-card"><span class="skill-no">06 — SEGURANÇA</span><h3>Segurança da informação</h3><p>Fundamentos estudados na graduação e em cursos, com atividades sobre proteção de dados, riscos e controle de acesso.</p><div class="tags"><span class="tag tag-accent">Cibersegurança</span><span class="tag">Segurança de dados</span><span class="tag">Controle de acesso</span><span class="tag">Riscos em nuvem</span><span class="tag">Auditoria</span></div></article>
+<article class="skill-card"><span class="skill-no">07 — INFRAESTRUTURA</span><h3>Ambientes e infraestrutura</h3><p>Ambientes utilizados em atividades de estudo, execução de projetos e administração do ambiente local.</p><div class="tags"><span class="tag tag-accent">Docker</span><span class="tag">Windows 11</span><span class="tag">Linux Server</span><span class="tag">Ubuntu</span><span class="tag">Kali Linux</span><span class="tag">AWS · em estudo</span></div></article>
+<article class="skill-card"><span class="skill-no">08 — FERRAMENTAS</span><h3>Desenvolvimento e integração</h3><p>Ferramentas de desenvolvimento, testes de APIs, notebooks e versionamento de código.</p><div class="tags"><span class="tag tag-accent">GitHub</span><span class="tag">VS Code</span><span class="tag">Postman</span><span class="tag">APIs REST</span><span class="tag">Anaconda</span><span class="tag">Jupyter Notebook</span></div></article>
+<article class="skill-card"><span class="skill-no">09 — MÉTODOS</span><h3>Práticas de trabalho</h3><p>Investigação de problemas, organização de requisitos, teste de hipóteses, análise de resultados e documentação.</p><div class="tags"><span class="tag">Resolução de problemas</span><span class="tag">Análise de requisitos</span><span class="tag">Testes</span><span class="tag">Documentação</span><span class="tag">Aprendizagem contínua</span></div></article>
+</div>
+<p class="section-note">Contexto de aprendizagem: SQL, Python, n8n, Docker, PowerShell e RPA aparecem em projetos descritos; Neo4j, Cypher, APIs REST, Postman, Pandas, NumPy, UML e modelagem MER aparecem em atividades acadêmicas ou cursos. Power BI foi abordado em cursos. AWS é conteúdo estudado na graduação, e Linux Server, Ubuntu e Kali Linux são ambientes utilizados para aprendizagem.</p>
+</div>
+</section>
+<section id="projetos">
+<div class="container">
+<div class="section-head">
+<span class="section-index">03 / PROJETOS</span>
+<div><h2>Projetos técnicos.</h2><p>Projetos pessoais e exercícios práticos descritos pelo problema, pela implementação e pelas tecnologias utilizadas. Os status distinguem entregas em uso de iniciativas ainda em desenvolvimento.</p></div>
+</div>
+<div class="projects-grid">
+<article class="project-card featured">
+<div class="project-top"><span class="project-code">PROJETO 01 · PYTHON / SEGURANÇA</span><span class="status status-progress">Em desenvolvimento</span></div>
+<h3>Sentinela — agente de segurança pessoal</h3>
+<p class="project-intro">Projeto pessoal em Python para monitoramento de segurança do próprio computador. A iniciativa permanece em desenvolvimento.</p>
+<div class="project-detail"><strong>Arquitetura registrada</strong><p>A estrutura modular contempla núcleo, verificações, módulo de IA, painel, banco de dados, logs, relatórios e testes. O Claude é utilizado no módulo de IA para apoiar a análise dos eventos observados.</p></div>
+<div class="tags project-tags"><span class="tag tag-accent">Python</span><span class="tag">Claude</span><span class="tag">SQL</span><span class="tag">Ambiente virtual</span><span class="tag">Logs</span><span class="tag">Testes</span></div>
+</article>
+<article class="project-card featured">
+<div class="project-top"><span class="project-code">PROJETO 02 · AUTOMAÇÃO / IA</span><span class="status">Implementado em ambiente próprio</span></div>
+<h3>Agente de IA e automação com n8n</h3>
+<p class="project-intro">Agente de IA integrado ao Gemini Flash em fluxos do n8n, com roteamento e regras condicionais implementadas em JavaScript.</p>
+<div class="project-detail"><strong>Infraestrutura e manutenção</strong><p>O ambiente é self-hosted em Docker e utiliza volume persistente. A atualização é apoiada por script PowerShell. Após uma atualização, o serviço foi recriado com a imagem oficial e o volume de dados original foi preservado.</p></div>
+<div class="tags project-tags"><span class="tag tag-accent">n8n</span><span class="tag">Docker</span><span class="tag">Gemini Flash</span><span class="tag">JavaScript</span><span class="tag">PowerShell</span></div>
+</article>
+<article class="project-card">
+<div class="project-top"><span class="project-code">PROJETO 03 · RPA</span><span class="status">Em uso</span></div>
+<h3>Automação de acesso a portal web</h3>
+<p class="project-intro">Automação de uma rotina repetitiva de acesso a um portal de cursos, construída com Python e PyAutoGUI.</p>
+<div class="project-detail"><strong>Entrega técnica</strong><p>A automação foi empacotada como executável para Windows (.exe) com PyInstaller e pode ser iniciada por um atalho na área de trabalho criado com PowerShell.</p></div>
+<div class="tags project-tags"><span class="tag tag-accent">Python</span><span class="tag">PyAutoGUI</span><span class="tag">PyInstaller</span><span class="tag">PowerShell</span></div>
+</article>
+<article class="project-card">
+<div class="project-top"><span class="project-code">PROJETO 04 · INTEGRAÇÃO / DADOS</span><span class="status">Rotinas desenvolvidas</span></div>
+<h3>Integração e tratamento de dados</h3>
+<p class="project-intro">Rotinas em Python desenvolvidas para integrar bancos de dados SQL e tratar informações de tarefas repetitivas de consolidação.</p>
+<div class="project-detail"><strong>Foco técnico</strong><p>As rotinas trabalham com SQL Server e MySQL, automatizando etapas de integração e tratamento de informações.</p></div>
+<div class="tags project-tags"><span class="tag tag-accent">Python</span><span class="tag">SQL Server</span><span class="tag">MySQL</span></div>
+</article>
+</div>
+<div class="mini-projects">
+<article class="mini-project"><h3>Jogo desenvolvido com Pygame</h3><p>Exercício em Python com Pygame que implementa geração de obstáculos sem sobreposição.</p><div class="tags"><span class="tag">Python</span><span class="tag">Pygame</span></div></article>
+<article class="mini-project"><h3>Banco de dados SQLite</h3><p>Script em Python para criação e consulta de um banco de dados SQLite.</p><div class="tags"><span class="tag">Python</span><span class="tag">SQLite</span></div></article>
 </div>
 
-<section id="resumo">
-  <div class="wrap">
-    <div class="sh"><span class="n">01</span><h2>Resumo profissional</h2></div>
-    <p class="sub">Atuação, formação e direção de carreira.</p>
-    <p>Atuo com bancos de dados relacionais e não relacionais, automação de processos e integração de modelos de linguagem a aplicações. Construí fluxos no n8n, automações RPA em Python e rotinas de tratamento de dados, e desenvolvo o Sentinela, um agente de segurança em Python.</p>
-    <p>Meu foco de carreira é a segurança da informação, com ênfase na proteção de dados. Tenho como pontos fortes a responsabilidade, a persistência na resolução de problemas e a atenção à qualidade da entrega.</p>
-  </div>
+</div>
 </section>
-
-<section id="competencias">
-  <div class="wrap">
-    <div class="sh"><span class="n">02</span><h2>Competências técnicas</h2></div>
-    <p class="sub">Tecnologias com as quais já trabalhei em projetos, disciplinas ou cursos.</p>
-    <div class="skills">
-      <div class="skill"><h3>Bancos de dados</h3><div class="tags"><span>SQL</span><span>SQL Server</span><span>MySQL</span><span>SQLite</span><span>Neo4j</span><span>Modelagem entidade-relacionamento</span><span>UML</span></div></div>
-      <div class="skill"><h3>Programação</h3><div class="tags"><span>Python</span><span>Pandas</span><span>NumPy</span><span>JavaScript</span><span>PowerShell</span><span>HTML e CSS</span></div></div>
-      <div class="skill"><h3>Dados e BI</h3><div class="tags"><span>Power BI</span><span>Análise exploratória</span><span>Estatística descritiva</span></div></div>
-      <div class="skill"><h3>Automação</h3><div class="tags"><span>n8n</span><span>Webhooks e APIs</span><span>RPA com PyAutoGUI</span><span>PyInstaller</span></div></div>
-      <div class="skill"><h3>Inteligência artificial</h3><div class="tags"><span>Agentes de IA</span><span>Integração de modelos de linguagem (LLMs)</span><span>Claude</span><span>Gemini</span><span>ChatGPT</span><span>NotebookLM</span><span>Engenharia de prompts</span></div></div>
-      <div class="skill"><h3>Segurança</h3><div class="tags"><span>Fundamentos de cibersegurança</span><span>Segurança de dados</span><span>Controle de acesso</span><span>Riscos em nuvem</span></div></div>
-      <div class="skill"><h3>Infraestrutura</h3><div class="tags"><span>Docker</span><span>Windows 11</span><span>Linux Server</span><span>Ubuntu</span><span>Kali Linux</span><span>AWS (em estudo)</span></div></div>
-      <div class="skill"><h3>Ferramentas</h3><div class="tags"><span>GitHub</span><span>Postman</span><span>APIs REST</span><span>VS Code</span><span>Anaconda</span><span>Jupyter Notebook</span></div></div>
-    </div>
-  </div>
+<section id="academicos">
+<div class="container">
+<div class="section-head">
+<span class="section-index">04 / ATIVIDADES ACADÊMICAS</span>
+<div><h2>Aplicações desenvolvidas durante a graduação.</h2><p>Trabalhos da graduação na UNINTER que demonstram aplicação acadêmica de modelagem de dados, programação, análise, APIs, computação em nuvem e extensão universitária.</p></div>
+</div>
+<div class="academic-list">
+<article class="academic-item"><span class="academic-year">2025</span><div><h3>Computação em Nuvem</h3><p>Estudos de caso de migração para a nuvem, abrangendo modelos SaaS, PaaS e IaaS; serviços AWS (S3, EC2, RDS, DynamoDB, Elastic Beanstalk e Amplify); escalabilidade; e mitigação de riscos de segurança.</p></div><div class="academic-tools">AWS · SaaS · PaaS · IaaS<br/>Segurança em nuvem</div></article>
+<article class="academic-item"><span class="academic-year">2025</span><div><h3>Desenvolvimento Web: Back End</h3><p>Desenvolvimento de uma API REST para cadastro de tarefas, com operações de inserção, consulta, atualização e exclusão. A API foi testada no Postman e publicada no GitHub.</p></div><div class="academic-tools">API REST · Postman<br/>GitHub</div></article>
+<article class="academic-item"><span class="academic-year">2025</span><div><h3>Banco de Dados NoSQL</h3><p>Modelagem em grafo no Neo4j a partir de arquivos JSON de tweets: criação de nós e relacionamentos, identificação da hashtag principal e análise da rede sob um recorte escolhido.</p></div><div class="academic-tools">Neo4j · Cypher<br/>JSON · Grafos</div></article>
+<article class="academic-item"><span class="academic-year">2025</span><div><h3>Análise Exploratória de Dados</h3><p>Aplicação de estatística descritiva, frequências absoluta e relativa, medidas por grupo (média, mediana, desvio padrão e variância) e gráficos de barras e boxplot, com Python e Pandas no Google Colab.</p></div><div class="academic-tools">Python · Pandas<br/>Google Colab</div></article>
+<article class="academic-item"><span class="academic-year">2025</span><div><h3>Projeto de extensão — ensino de lógica de programação</h3><p>Atividade com alunos do 6º ano da E.E. Visconde de Taunay, em Santo André: ensino de lógica de programação em Python com apoio de um programa de gestão financeira em Jupyter Notebook. Trabalho alinhado ao ODS 4 — Educação de Qualidade.</p></div><div class="academic-tools">Python · Jupyter Notebook<br/>ODS 4 · Educação</div></article>
+<article class="academic-item"><span class="academic-year">2024</span><div><h3>Banco de Dados Relacional</h3><p>Elaboração de modelo entidade-relacionamento de uma clínica médica e implementação do banco de dados “Livraria” no MySQL Workbench, com chaves primárias e estrangeiras, restrições NOT NULL e carga de dados.</p></div><div class="academic-tools">MER · SQL<br/>MySQL Workbench</div></article>
+<article class="academic-item"><span class="academic-year">2024</span><div><h3>Coleta de Requisitos e Modelagem de Banco de Dados</h3><p>Elaboração de casos de uso em UML, diagrama de classes e modelo conceitual para um sistema de uma startup de produtos agropecuários e pet, com dois perfis de acesso: administrador e funcionário.</p></div><div class="academic-tools">UML · Requisitos<br/>Modelagem conceitual</div></article>
+<article class="academic-item"><span class="academic-year">2024</span><div><h3>Fundamentos de Desenvolvimento Web</h3><p>Desenvolvimento de páginas em HTML e CSS, incluindo formulário de contato e página de formação.</p></div><div class="academic-tools">HTML · CSS</div></article>
+<article class="academic-item"><span class="academic-year">Extensão</span><div><h3>Vida tem água, vidas em águas — Ubatuba, SP</h3><p>Planejamento de uma proposta em três fases para contribuir com a preservação da vida marinha, alinhada aos ODS 14 e 17. O trabalho concebeu um site em HTML, bases de dados SQL para diferentes esferas de governo e a proposta do aplicativo UBAFIS (Ubatuba Fiscaliza), voltado a denúncias e fiscalização.</p></div><div class="academic-tools">HTML · SQL · Python<br/>Planejamento · ODS 14 e 17</div></article>
+</div>
+</div>
 </section>
-
-<section id="projetos">
-  <div class="wrap">
-    <div class="sh"><span class="n">03</span><h2>Projetos técnicos</h2></div>
-    <p class="sub">Projetos pessoais, com contexto, solução e tecnologias.</p>
-    <div class="cases">
-
-      <article class="case">
-        <header><h3>Sentinela: agente de segurança pessoal</h3><span class="badge wip">Em desenvolvimento</span></header>
-        <dl>
-          <dt>Contexto</dt><dd>Monitoramento de segurança do próprio computador.</dd>
-          <dt>Solução</dt><dd>Agente em Python com arquitetura modular: núcleo, verificações, IA, painel, banco de dados, logs, relatórios e testes. O módulo de IA usa o Claude para analisar os eventos observados.</dd>
-          <dt>Tecnologias</dt><dd><div class="tags"><span>Python</span><span>Claude</span><span>SQL</span><span>Ambiente virtual</span></div></dd>
-        </dl>
-      </article>
-
-      <article class="case">
-        <header><h3>Agente de IA e automação de fluxos</h3><span class="badge">n8n</span></header>
-        <dl>
-          <dt>Contexto</dt><dd>Automação de etapas de processo com apoio de um modelo de linguagem, sem custo de licença.</dd>
-          <dt>Solução</dt><dd>Agente integrado ao Gemini Flash, com roteamento e regras condicionais em JavaScript. O n8n é hospedado em ambiente próprio (self-hosted), com Docker e volume persistente, e a atualização é feita por um script em PowerShell. Após uma atualização, o serviço foi recriado com a imagem oficial e o volume de dados original.</dd>
-          <dt>Tecnologias</dt><dd><div class="tags"><span>n8n</span><span>Docker</span><span>Gemini</span><span>JavaScript</span><span>PowerShell</span></div></dd>
-        </dl>
-      </article>
-
-      <article class="case">
-        <header><h3>Automação de login em portal web (RPA)</h3><span class="badge">Em uso</span></header>
-        <dl>
-          <dt>Contexto</dt><dd>Acesso repetitivo a um portal de cursos.</dd>
-          <dt>Solução</dt><dd>Robô em Python com PyAutoGUI que executa o acesso sem intervenção manual. A solução foi empacotada em um executável (.exe) com PyInstaller e é aberta por um atalho na área de trabalho, criado com PowerShell.</dd>
-          <dt>Tecnologias</dt><dd><div class="tags"><span>Python</span><span>PyAutoGUI</span><span>PyInstaller</span><span>PowerShell</span></div></dd>
-        </dl>
-      </article>
-
-      <article class="case">
-        <header><h3>Integração e tratamento de dados</h3><span class="badge">Rotinas em Python</span></header>
-        <dl>
-          <dt>Contexto</dt><dd>Tarefas repetitivas de consolidação de informações em bancos SQL.</dd>
-          <dt>Solução</dt><dd>Rotinas em Python que integram bancos de dados SQL e tratam as informações, automatizando o processo.</dd>
-          <dt>Tecnologias</dt><dd><div class="tags"><span>Python</span><span>SQL Server</span><span>MySQL</span></div></dd>
-        </dl>
-      </article>
-
-    </div>
-    <p style="margin-top:18px;color:var(--muted)">Outros exercícios: jogo em Pygame com geração de obstáculos sem sobreposição e script em Python para criar e consultar um banco SQLite.</p>
-  </div>
-</section>
-
 <section id="seguranca">
-  <div class="wrap">
-    <div class="sh"><span class="n">04</span><h2>Segurança da informação</h2></div>
-    <p class="sub">Trajetória e evidências na área de segurança.</p>
-    <div class="steps">
-      <div class="step done"><span class="st">CONCLUÍDA</span><h3>Graduação em Tecnologia em Banco de Dados</h3><p>UNINTER, com disciplinas de segurança, auditoria e conformidade.</p></div>
-      <div class="step now"><span class="st">EM ANDAMENTO</span><h3>Curso de cibersegurança</h3><p>Trilha da Digital Innovation One e do Santander.</p></div>
-      <div class="step next"><span class="st">PRÓXIMO PASSO</span><h3>Pós-graduação em Segurança da Informação</h3><p>Aprofundamento em proteção de dados, riscos e defesa de sistemas.</p></div>
-    </div>
-    <div class="tablewrap">
-      <table class="ev">
-        <thead><tr><th>Eixo</th><th>Evidência</th></tr></thead>
-        <tbody>
-          <tr><td>Cursos</td><td>Cibersegurança do Zero à Prática (Aceleração Santander, 1 h, 03/08/2026) e Segurança e Boas Práticas em Projetos Feitos com Vibe Code (1 h, 10/08/2026).</td></tr>
-          <tr><td>Disciplinas</td><td>Segurança em Banco de Dados (nota 99), Segurança em Sistemas de Informação (89), Auditoria de Sistemas (88) e Legislação, Ética e Conformidade (80).</td></tr>
-          <tr><td>Nuvem</td><td>Estudo de caso sobre migração para a nuvem, com identificação de riscos, como invasão, malware e phishing, e de medidas de mitigação: criptografia; autenticação em dois fatores; firewall e detecção de intrusão; políticas de acesso; backups; e treinamento dos usuários.</td></tr>
-          <tr><td>Controle de acesso</td><td>Levantamento de requisitos de um sistema com dois perfis de acesso: administrador, com acesso total, e funcionário, sem acesso aos dados financeiros.</td></tr>
-          <tr><td>Projeto aplicado</td><td>Sentinela, agente de segurança em Python com módulo de IA, em desenvolvimento.</td></tr>
-          <tr><td>Ambiente</td><td>Uso de Linux Server, Ubuntu e Kali Linux.</td></tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
+<div class="container">
+<div class="section-head">
+<span class="section-index">05 / SEGURANÇA DA INFORMAÇÃO</span>
+<div><h2>Uma direção de especialização sustentada por estudos e projeto próprio.</h2><p>Fundamentos acadêmicos, cursos e um projeto pessoal em desenvolvimento. O conteúdo apresentado representa formação e prática de estudo, não experiência profissional na área.</p></div>
+</div>
+<div class="security-progress">
+<article class="progress-item"><span>Concluído</span><strong>Tecnologia em Banco de Dados</strong><p>UNINTER · conclusão em 2026, com disciplinas de segurança, auditoria e conformidade.</p></article>
+<article class="progress-item"><span>Em andamento</span><strong>Estudos de cibersegurança</strong><p>Cursos e trilha de aprendizagem pela Digital Innovation One e pelo Santander.</p></article>
+<article class="progress-item"><span>Próximo passo</span><strong>Pós-graduação em Segurança da Informação</strong><p>Pós-graduação planejada como próximo passo de formação.</p></article>
+</div>
+<div class="security-grid">
+<article class="security-card"><span class="label">01 · Disciplinas</span><h3>Segurança, auditoria e conformidade</h3><p>Resultados acadêmicos em disciplinas diretamente relacionadas à proteção e à governança da informação:</p><ul><li>Segurança em Banco de Dados — nota 99.</li><li>Segurança em Sistemas de Informação — nota 89.</li><li>Auditoria de Sistemas — nota 88.</li><li>Legislação, Ética e Conformidade — nota 80.</li></ul></article>
+<article class="security-card"><span class="label">02 · Estudo de caso</span><h3>Riscos de segurança em ambientes de nuvem</h3><p>Estudo de caso sobre migração para a nuvem, com identificação de riscos como invasão, malware e phishing. As medidas de mitigação estudadas incluíram:</p><ul><li>Criptografia e autenticação em dois fatores.</li><li>Firewall e detecção de intrusão.</li><li>Políticas de acesso e backups.</li><li>Treinamento dos usuários.</li></ul></article>
+<article class="security-card"><span class="label">03 · Requisitos</span><h3>Controle de acesso por perfil</h3><p>Levantamento de requisitos para um sistema com dois perfis: administrador, com acesso total, e funcionário, sem acesso aos dados financeiros.</p></article>
+<article class="security-card"><span class="label">04 · Projeto pessoal</span><h3>Sentinela</h3><p>Agente em Python, ainda em desenvolvimento, com arquitetura modular, registro de eventos, banco de dados, relatórios, testes e um módulo de IA para análise dos eventos observados.</p></article>
+</div>
+<div class="callout"><strong>Formação complementar:</strong> concluí os cursos “Cibersegurança do Zero à Prática” e “Segurança e Boas Práticas em Projetos Feitos com Vibe Code”, oferecidos pela Digital Innovation One em iniciativas ligadas ao Santander.</div>
+</div>
 </section>
-
 <section id="ia">
-  <div class="wrap">
-    <div class="sh"><span class="n">05</span><h2>Inteligência artificial aplicada ao desenvolvimento</h2></div>
-    <p class="sub">Uso a IA como ferramenta de engenharia para investigar, testar e construir, sempre validando o resultado antes de considerá-lo pronto.</p>
-    <div class="ai">
-      <div class="aicard"><span class="k">01 · INVESTIGAÇÃO</span><h3>Investigação de erros</h3><p>Apresento à IA a mensagem de erro, o ambiente e as alterações recentes para levantar as causas prováveis. Caso: o contêiner do n8n desapareceu após uma atualização, e investiguei a causa antes de intervir.</p></div>
-      <div class="aicard"><span class="k">02 · VALIDAÇÃO</span><h3>Comparação de hipóteses e validação de soluções</h3><p>Solicito mais de uma hipótese, testo uma de cada vez e adoto somente a solução que produz o resultado esperado. Caso: o serviço do n8n foi recriado com a imagem oficial e o volume de dados original, e a volta ao funcionamento foi confirmada.</p></div>
-      <div class="aicard"><span class="k">03 · AUTOMAÇÃO</span><h3>Construção de automações</h3><p>Fluxos no n8n com webhooks, APIs e regras condicionais; robôs RPA em Python com PyAutoGUI; e scripts de manutenção em PowerShell. Cada automação é planejada antes de ser montada.</p></div>
-      <div class="aicard"><span class="k">04 · INTEGRAÇÃO</span><h3>Integração de modelos de linguagem aos projetos</h3><p>O Gemini Flash é o modelo do agente de IA no n8n, e o Claude é o modelo usado no módulo de análise de eventos do Sentinela.</p></div>
-      <div class="aicard"><span class="k">05 · TESTES</span><h3>Verificação e teste do código gerado</h3><p>Leio o código, executo-o em ambiente controlado e confiro o resultado antes de adotá-lo. O Sentinela mantém uma pasta de testes, e a API desenvolvida na faculdade foi testada no Postman, com registro por capturas de tela.</p></div>
-    </div>
-    <h3 class="group">Ferramentas de IA utilizadas</h3>
-    <div class="tags"><span>Claude</span><span>Gemini</span><span>ChatGPT</span><span>NotebookLM</span><span>Engenharia de prompts</span></div>
-    <p class="sub" style="margin:14px 0 0">Certificações relacionadas: Claude para Builders, Fundamentos do ChatGPT, Domine a IA com Gemini, Treinando uma IA de Aprendizagem: Explore o Poder do NotebookLM, Fundamentos da IA Moderna e Introdução à Engenharia de Prompts.</p>
-  </div>
+<div class="container">
+<div class="section-head">
+<span class="section-index">06 / IA APLICADA</span>
+<div><h2>Uso de inteligência artificial com análise e validação.</h2><p>Utilizo modelos de IA como ferramentas de apoio à investigação, ao desenvolvimento e à automação. Analiso as respostas, testo as hipóteses e verifico o comportamento do resultado antes de incorporá-lo a um projeto.</p></div>
+</div>
+<div class="ai-grid">
+<article class="ai-card"><span>01 · INVESTIGAÇÃO</span><h3>Análise de erros e hipóteses</h3><p>Apresento à IA a mensagem de erro, o ambiente e as alterações recentes para investigar causas possíveis. Um exemplo foi a análise do problema de inicialização do contêiner do n8n após uma atualização.</p></article>
+<article class="ai-card"><span>02 · VALIDAÇÃO</span><h3>Teste de soluções</h3><p>Comparo hipóteses, testo as alterações de forma controlada e verifico se o resultado esperado foi alcançado. No caso do n8n, confirmei a recriação do serviço com a imagem oficial e a preservação do volume de dados original.</p></article>
+<article class="ai-card"><span>03 · INTEGRAÇÃO</span><h3>Modelos de linguagem em projetos</h3><p>Integrei o Gemini Flash ao agente de automação no n8n e utilizo o Claude no módulo de análise de eventos do projeto Sentinela.</p></article>
+<article class="ai-card"><span>04 · CÓDIGO</span><h3>Leitura, execução e conferência</h3><p>Leio o código gerado, executo-o em ambiente controlado e confiro seu comportamento antes de adotá-lo. A API desenvolvida na graduação foi testada no Postman, com registro de evidências.</p></article>
+<article class="ai-card"><span>05 · AUTOMAÇÃO</span><h3>Planejamento de fluxos</h3><p>Aplico IA no planejamento de fluxos no n8n, na elaboração de regras condicionais em JavaScript e no apoio à construção de automações em Python e PowerShell.</p></article>
+<article class="ai-card"><span>06 · FERRAMENTAS</span><h3>Ecossistema utilizado</h3><p>Claude, Google Gemini, ChatGPT e NotebookLM, além de conteúdos estudados sobre IA generativa, agentes de IA, modelos de linguagem e engenharia de prompts.</p></article>
+</div>
+</div>
 </section>
-
 <section id="formacao">
-  <div class="wrap">
-    <div class="sh"><span class="n">06</span><h2>Formação acadêmica</h2></div>
-    <p class="sub">Tecnologia em Banco de Dados, UNINTER, concluída em 2026. Notas de 0 a 100, conforme o histórico escolar. Estão listadas as disciplinas ligadas a segurança, bancos de dados, IA e desenvolvimento.</p>
-<h3 class="group">Segurança, auditoria e conformidade</h3>
-    <ul class="certs hl">
-      <li><strong>Segurança em Banco de Dados</strong><span class="meta">nota 99 · A2/2026</span></li>
-      <li><strong>Segurança em Sistemas de Informação</strong><span class="meta">nota 89 · B2/2025</span></li>
-      <li><strong>Auditoria de Sistemas</strong><span class="meta">nota 88 · C1/2026</span></li>
-      <li><strong>Governança de Sistemas da Informação</strong><span class="meta">nota 86 · C1/2024</span></li>
-      <li><strong>Legislação, Ética e Conformidade</strong><span class="meta">nota 80 · B1/2026</span></li>
-    </ul>
-    <div class="twocol">
-      <div>
-    <h3 class="group">Bancos de dados</h3>
-    <ul class="certs">
-      <li><strong>Banco de Dados Relacional</strong><span class="meta">nota 99 · C2/2024</span></li>
-      <li><strong>Administração em Banco de Dados I</strong><span class="meta">nota 93 · C2/2025</span></li>
-      <li><strong>Banco de Dados em Nuvem</strong><span class="meta">nota 93 · A1/2026</span></li>
-      <li><strong>Administração em Banco de Dados II</strong><span class="meta">nota 91 · B2/2026</span></li>
-      <li><strong>Banco de Dados NoSQL</strong><span class="meta">nota 91 · C2/2025</span></li>
-      <li><strong>Sistema Gerenciador de Banco de Dados</strong><span class="meta">nota 85 · A1/2025</span></li>
-    </ul>
-      </div>
-      <div>
-    <h3 class="group">Inteligência artificial e dados</h3>
-    <ul class="certs">
-      <li><strong>Eletiva I: Introdução à Inteligência Artificial</strong><span class="meta">nota 99 · C1/2026</span></li>
-      <li><strong>Análise Exploratória de Dados</strong><span class="meta">nota 99 · B2/2025</span></li>
-      <li><strong>Machine Learning</strong><span class="meta">nota 96 · C1/2025</span></li>
-      <li><strong>Eletiva II: Deep Learning</strong><span class="meta">nota 93 · B2/2026</span></li>
-      <li><strong>Visualização de Dados e Storytelling</strong><span class="meta">nota 87 · B1/2026</span></li>
-    </ul>
-      </div>
-      <div>
-    <h3 class="group">Desenvolvimento e infraestrutura</h3>
-    <ul class="certs">
-      <li><strong>Programação Orientada a Objetos</strong><span class="meta">nota 97 · A2/2025</span></li>
-      <li><strong>Lógica de Programação e Algoritmos</strong><span class="meta">nota 92 · C1/2024</span></li>
-      <li><strong>Linguagem de Programação</strong><span class="meta">nota 91 · A1/2025</span></li>
-      <li><strong>Desenvolvimento Web: Back End</strong><span class="meta">nota 91 · C1/2025</span></li>
-      <li><strong>DevOps e Integração Contínua</strong><span class="meta">nota 85 · A1/2026</span></li>
-    </ul>
-      </div>
-      <div>
-    <h3 class="group">Extensão universitária</h3>
-    <ul class="certs">
-      <li><strong>Atividades Extensionistas I: Tecnologia Aplicada à Inclusão Digital – Levantamento</strong><span class="meta">nota 100 · C2/2024</span></li>
-      <li><strong>Atividades Extensionistas II: Tecnologia Aplicada à Inclusão Digital – Projeto</strong><span class="meta">nota 89 · C2/2025</span></li>
-    </ul>
-      </div>
-    </div>
-
-  </div>
+<div class="container">
+<div class="section-head">
+<span class="section-index">07 / FORMAÇÃO</span>
+<div><h2>Formação acadêmica.</h2><p>Tecnologia em Banco de Dados — UNINTER, concluída em 2026. A seleção abaixo destaca disciplinas relacionadas a bancos de dados, segurança, desenvolvimento, inteligência artificial e análise de dados. Notas em escala de 0 a 100, conforme o histórico acadêmico.</p></div>
+</div>
+<div class="grades-wrap">
+<div class="grade-group"><h3>Segurança, auditoria e conformidade</h3><ul class="grade-list"><li><span>Segurança em Banco de Dados</span><em>99 · A2/2026</em></li><li><span>Segurança em Sistemas de Informação</span><em>89 · B2/2025</em></li><li><span>Auditoria de Sistemas</span><em>88 · C1/2026</em></li><li><span>Governança de Sistemas da Informação</span><em>86 · C1/2024</em></li><li><span>Legislação, Ética e Conformidade</span><em>80 · B1/2026</em></li></ul></div>
+<div class="grade-group"><h3>Bancos de dados</h3><ul class="grade-list"><li><span>Banco de Dados Relacional</span><em>99 · C2/2024</em></li><li><span>Administração em Banco de Dados I</span><em>93 · C2/2025</em></li><li><span>Banco de Dados em Nuvem</span><em>93 · A1/2026</em></li><li><span>Administração em Banco de Dados II</span><em>91 · B2/2026</em></li><li><span>Banco de Dados NoSQL</span><em>91 · C2/2025</em></li><li><span>Sistema Gerenciador de Banco de Dados</span><em>85 · A1/2025</em></li></ul></div>
+<div class="grade-group"><h3>Inteligência artificial e dados</h3><ul class="grade-list"><li><span>Introdução à Inteligência Artificial</span><em>99 · C1/2026</em></li><li><span>Análise Exploratória de Dados</span><em>99 · B2/2025</em></li><li><span>Machine Learning</span><em>96 · C1/2025</em></li><li><span>Deep Learning</span><em>93 · B2/2026</em></li><li><span>Visualização de Dados e Storytelling</span><em>87 · B1/2026</em></li></ul></div>
+<div class="grade-group"><h3>Desenvolvimento e infraestrutura</h3><ul class="grade-list"><li><span>Programação Orientada a Objetos</span><em>97 · A2/2025</em></li><li><span>Lógica de Programação e Algoritmos</span><em>92 · C1/2024</em></li><li><span>Linguagem de Programação</span><em>91 · A1/2025</em></li><li><span>Desenvolvimento Web: Back End</span><em>91 · C1/2025</em></li><li><span>DevOps e Integração Contínua</span><em>85 · A1/2026</em></li></ul></div>
+<div class="grade-group"><h3>Extensão universitária</h3><ul class="grade-list"><li><span>Atividades Extensionistas I: Tecnologia Aplicada à Inclusão Digital — Levantamento</span><em>100 · C2/2024</em></li><li><span>Atividades Extensionistas II: Tecnologia Aplicada à Inclusão Digital — Projeto</span><em>89 · C2/2025</em></li></ul></div>
+</div>
+</div>
 </section>
-
-<section id="certificados">
-  <div class="wrap">
-    <div class="sh"><span class="n">07</span><h2>Certificações e cursos</h2></div>
-    <p class="sub">Principais certificados, agrupados por tema. A carga horária é a registrada em cada certificado.</p>
-
-    <h3 class="group">Segurança da informação</h3>
-    <ul class="certs hl">
-      <li><strong>Cibersegurança do Zero à Prática</strong><span class="meta">1 h · 03/08/2026</span><span class="org">Aceleração Santander · Digital Innovation One</span></li>
-      <li><strong>Segurança e Boas Práticas em Projetos Feitos com Vibe Code</strong><span class="meta">1 h · 10/08/2026</span><span class="org">Digital Innovation One</span></li>
-    </ul>
-
-    <div class="twocol">
-      <div>
-        <h3 class="group">Python e programação</h3>
-        <ul class="certs">
-          <li><strong>Python Impressionador (edição 2026)</strong><span class="meta">118 h · 13/07/2026</span><span class="org">Hashtag Treinamentos · inclui SQL, APIs, automação web e ambientes virtuais</span></li>
-          <li><strong>Python Impressionador (edição 2024)</strong><span class="meta">121 h · 17/09/2024</span><span class="org">Hashtag Treinamentos</span></li>
-          <li><strong>Jornada Python</strong><span class="meta">8 h · 16/01/2025</span><span class="org">Hashtag Treinamentos</span></li>
-          <li><strong>Algoritmos e Lógica de Programação</strong><span class="meta">2 h · 18/09/2024</span><span class="org">Hashtag Treinamentos</span></li>
-          <li><strong>Teste de Python, aprovado</strong><span class="meta">18/07/2024</span><span class="org">Nerdin Vagas de TI</span></li>
-        </ul>
-      </div>
-      <div>
-        <h3 class="group">Dados e Power BI</h3>
-        <ul class="certs">
-          <li><strong>Intensivão de Análise de Dados</strong><span class="meta">8 h · 19/12/2024</span><span class="org">Hashtag Treinamentos</span></li>
-          <li><strong>Intensivão de Power BI</strong><span class="meta">8 h · 12/09/2024</span><span class="org">Hashtag Treinamentos</span></li>
-          <li><strong>Intensivão de Power BI</strong><span class="meta">8 h · 20/06/2024</span><span class="org">Hashtag Treinamentos</span></li>
-          <li><strong>Introdução à Análise de Dados</strong><span class="meta">1 h · 23/04/2026</span><span class="org">Randstad · Digital Innovation One</span></li>
-        </ul>
-      </div>
-    </div>
-
-    <h3 class="group">Inteligência artificial</h3>
-    <ul class="certs">
-      <li><strong>Claude para Builders</strong><span class="meta">5 h · 03/11/2026</span><span class="org">Tera</span></li>
-      <li><strong>Fundamentos do ChatGPT</strong><span class="meta">8 h · 14/08/2026</span><span class="org">Santander</span></li>
-      <li><strong>Domine a IA com Gemini</strong><span class="meta">2 h · 14/08/2026</span><span class="org">Santander</span></li>
-      <li><strong>Jornada Inteligência Artificial</strong><span class="meta">8 h · 18/07/2024</span><span class="org">Hashtag Treinamentos</span></li>
-      <li><strong>Treinando uma IA de Aprendizagem: Explore o Poder do NotebookLM</strong><span class="meta">4 h · 29/08/2026</span><span class="org">Digital Innovation One · projeto</span></li>
-      <li><strong>Fundamentos da IA Moderna: Machine Learning, LLMs, IA Generativa e Agentes</strong><span class="meta">2 h · 17/08/2026</span><span class="org">Digital Innovation One</span></li>
-      <li><strong>Potencializando Seus Estudos e Carreira com IA (Chatbots, Copilotos e Agentes)</strong><span class="meta">2 h · 23/08/2026</span><span class="org">Digital Innovation One</span></li>
-      <li><strong>Introdução à Engenharia de Prompts</strong><span class="meta">1 h · 27/08/2026</span><span class="org">Digital Innovation One</span></li>
-      <li><strong>Microsoft Week: AI Data Engineering</strong><span class="meta">1 h · 13/08/2026</span><span class="org">Digital Innovation One</span></li>
-    </ul>
-
-    <h3 class="group">Automação com n8n e RPA</h3>
-    <ul class="certs">
-      <li><strong>Criando um Processo de RPA com n8n e Python</strong><span class="meta">1 h · 24/09/2026</span><span class="org">Digital Innovation One · projeto</span></li>
-      <li><strong>Uso de Webhooks e APIs no n8n</strong><span class="meta">1 h · 18/09/2026</span><span class="org">Digital Innovation One</span></li>
-      <li><strong>Manipulação de Dados e Variáveis no n8n</strong><span class="meta">1 h · 13/09/2026</span><span class="org">Digital Innovation One</span></li>
-      <li><strong>Planejando Automações com n8n Usando Apenas Bons Prompts</strong><span class="meta">1 h · 11/09/2026</span><span class="org">Digital Innovation One</span></li>
-      <li><strong>Automatizando Processos com n8n</strong><span class="meta">1 h · 11/09/2026</span><span class="org">Digital Innovation One</span></li>
-      <li><strong>Integração com Serviços Populares no n8n</strong><span class="meta">1 h · 05/09/2026</span><span class="org">Digital Innovation One</span></li>
-      <li><strong>Utilizando Nós Padrão do n8n</strong><span class="meta">1 h · 04/09/2026</span><span class="org">Digital Innovation One</span></li>
-      <li><strong>Bootcamp Santander 2026: Automação com n8n</strong><span class="meta">1 h · 29/08/2026</span><span class="org">Digital Innovation One</span></li>
-      <li><strong>Agentes de IA (DIO Agent)</strong><span class="meta">1 h · 27/08/2026</span><span class="org">Digital Innovation One</span></li>
-      <li><strong>Navegação e Interface do n8n</strong><span class="meta">1 h · 30/07/2026</span><span class="org">Digital Innovation One</span></li>
-      <li><strong>Criação de Workflows no n8n</strong><span class="meta">1 h · 03/08/2026</span><span class="org">Digital Innovation One</span></li>
-      <li><strong>Início no n8n e Primeiros Passos</strong><span class="meta">1 h cada · 20/07/2026</span><span class="org">Digital Innovation One · dois certificados</span></li>
-      <li><strong>Aceleração Santander: Automação na Prática</strong><span class="meta">1 h · 09/07/2026</span><span class="org">Digital Innovation One</span></li>
-    </ul>
-
-    <h3 class="group">Carreira e produto</h3>
-    <ul class="certs">
-      <li><strong>Digital Product Week 2026</strong><span class="meta">18 h · 28 a 30/10/2026</span><span class="org">Tera · liderança, análise de dados, design e inovação</span></li>
-      <li><strong>Profissão: TI do Zero ao Pro</strong><span class="meta">10 h · 17/02/2024</span><span class="org">EBAC</span></li>
-    </ul>
-  </div>
+<section id="certificacoes">
+<div class="container">
+<div class="section-head">
+<span class="section-index">08 / CERTIFICAÇÕES</span>
+<div><h2>Formação complementar e atualização.</h2><p>O currículo registra mais de 46 certificados e mais de 410 horas de formação complementar. Abaixo estão cursos selecionados por área; as cargas horárias e datas seguem as informações registradas no currículo e nos certificados.</p></div>
+</div>
+<div class="cert-groups">
+<details class="cert-group" open=""><summary>Segurança da informação <span class="cert-count">2 cursos</span></summary><ul class="cert-list">
+<li><strong>Cibersegurança do Zero à Prática</strong><span class="cert-meta">1 h · 03/08/2026</span><span class="cert-org">Aceleração Santander · Digital Innovation One</span></li>
+<li><strong>Segurança e Boas Práticas em Projetos Feitos com Vibe Code</strong><span class="cert-meta">1 h · 10/08/2026</span><span class="cert-org">Digital Innovation One</span></li>
+</ul></details>
+<details class="cert-group"><summary>Python e programação <span class="cert-count">5 cursos / avaliações</span></summary><ul class="cert-list">
+<li><strong>Python Impressionador — edição 2026</strong><span class="cert-meta">118 h · 13/07/2026</span><span class="cert-org">Hashtag Treinamentos · conteúdos de SQL, APIs, automação web e ambientes virtuais</span></li>
+<li><strong>Python Impressionador — edição 2024</strong><span class="cert-meta">121 h · 17/09/2024</span><span class="cert-org">Hashtag Treinamentos</span></li>
+<li><strong>Jornada Python</strong><span class="cert-meta">8 h · 16/01/2025</span><span class="cert-org">Hashtag Treinamentos</span></li>
+<li><strong>Algoritmos e Lógica de Programação</strong><span class="cert-meta">2 h · 18/09/2024</span><span class="cert-org">Hashtag Treinamentos</span></li>
+<li><strong>Teste de Python — aprovado</strong><span class="cert-meta">18/07/2024</span><span class="cert-org">Nerdin Vagas de TI</span></li>
+</ul></details>
+<details class="cert-group"><summary>Dados e Power BI <span class="cert-count">4 cursos</span></summary><ul class="cert-list">
+<li><strong>Intensivão de Análise de Dados</strong><span class="cert-meta">8 h · 19/12/2024</span><span class="cert-org">Hashtag Treinamentos</span></li>
+<li><strong>Intensivão de Power BI</strong><span class="cert-meta">8 h · 12/09/2024</span><span class="cert-org">Hashtag Treinamentos</span></li>
+<li><strong>Intensivão de Power BI</strong><span class="cert-meta">8 h · 20/06/2024</span><span class="cert-org">Hashtag Treinamentos</span></li>
+<li><strong>Introdução à Análise de Dados</strong><span class="cert-meta">1 h · 23/04/2026</span><span class="cert-org">Randstad · Digital Innovation One</span></li>
+</ul></details>
+<details class="cert-group"><summary>Inteligência artificial <span class="cert-count">9 cursos</span></summary><ul class="cert-list">
+<li><strong>Claude para Builders</strong><span class="cert-meta">5 h · 03/11/2026</span><span class="cert-org">Tera</span></li>
+<li><strong>Fundamentos do ChatGPT</strong><span class="cert-meta">8 h · 14/08/2026</span><span class="cert-org">Santander</span></li>
+<li><strong>Domine a IA com Gemini</strong><span class="cert-meta">2 h · 14/08/2026</span><span class="cert-org">Santander</span></li>
+<li><strong>Jornada Inteligência Artificial</strong><span class="cert-meta">8 h · 18/07/2024</span><span class="cert-org">Hashtag Treinamentos</span></li>
+<li><strong>Treinando uma IA de Aprendizagem: Explore o Poder do NotebookLM</strong><span class="cert-meta">4 h · 29/08/2026</span><span class="cert-org">Digital Innovation One · projeto</span></li>
+<li><strong>Fundamentos da IA Moderna: Machine Learning, LLMs, IA Generativa e Agentes</strong><span class="cert-meta">2 h · 17/08/2026</span><span class="cert-org">Digital Innovation One</span></li>
+<li><strong>Potencializando Seus Estudos e Carreira com IA (Chatbots, Copilotos e Agentes)</strong><span class="cert-meta">2 h · 23/08/2026</span><span class="cert-org">Digital Innovation One</span></li>
+<li><strong>Introdução à Engenharia de Prompts</strong><span class="cert-meta">1 h · 27/08/2026</span><span class="cert-org">Digital Innovation One</span></li>
+<li><strong>Microsoft Week: AI Data Engineering</strong><span class="cert-meta">1 h · 13/08/2026</span><span class="cert-org">Digital Innovation One</span></li>
+</ul></details>
+<details class="cert-group"><summary>Automação com n8n e RPA <span class="cert-count">14 certificados</span></summary><ul class="cert-list">
+<li><strong>Criando um Processo de RPA com n8n e Python</strong><span class="cert-meta">1 h · 24/09/2026</span><span class="cert-org">Digital Innovation One · projeto</span></li>
+<li><strong>Uso de Webhooks e APIs no n8n</strong><span class="cert-meta">1 h · 18/09/2026</span><span class="cert-org">Digital Innovation One</span></li>
+<li><strong>Manipulação de Dados e Variáveis no n8n</strong><span class="cert-meta">1 h · 13/09/2026</span><span class="cert-org">Digital Innovation One</span></li>
+<li><strong>Planejando Automações com n8n Usando Apenas Bons Prompts</strong><span class="cert-meta">1 h · 11/09/2026</span><span class="cert-org">Digital Innovation One</span></li>
+<li><strong>Automatizando Processos com n8n</strong><span class="cert-meta">1 h · 11/09/2026</span><span class="cert-org">Digital Innovation One</span></li>
+<li><strong>Integração com Serviços Populares no n8n</strong><span class="cert-meta">1 h · 05/09/2026</span><span class="cert-org">Digital Innovation One</span></li>
+<li><strong>Utilizando Nós Padrão do n8n</strong><span class="cert-meta">1 h · 04/09/2026</span><span class="cert-org">Digital Innovation One</span></li>
+<li><strong>Bootcamp Santander 2026: Automação com n8n</strong><span class="cert-meta">1 h · 29/08/2026</span><span class="cert-org">Digital Innovation One</span></li>
+<li><strong>Agentes de IA (DIO Agent)</strong><span class="cert-meta">1 h · 27/08/2026</span><span class="cert-org">Digital Innovation One</span></li>
+<li><strong>Navegação e Interface do n8n</strong><span class="cert-meta">1 h · 30/07/2026</span><span class="cert-org">Digital Innovation One</span></li>
+<li><strong>Criação de Workflows no n8n</strong><span class="cert-meta">1 h · 03/08/2026</span><span class="cert-org">Digital Innovation One</span></li>
+<li><strong>Início no n8n e Primeiros Passos</strong><span class="cert-meta">1 h cada · 20/07/2026</span><span class="cert-org">Digital Innovation One · dois certificados</span></li>
+<li><strong>Aceleração Santander: Automação na Prática</strong><span class="cert-meta">1 h · 09/07/2026</span><span class="cert-org">Digital Innovation One</span></li>
+</ul></details>
+<details class="cert-group"><summary>Carreira e produto <span class="cert-count">2 cursos</span></summary><ul class="cert-list">
+<li><strong>Digital Product Week 2026</strong><span class="cert-meta">18 h · 28 a 30/10/2026</span><span class="cert-org">Tera · liderança, análise de dados, design e inovação</span></li>
+<li><strong>Profissão: TI do Zero ao Pro</strong><span class="cert-meta">10 h · 17/02/2024</span><span class="cert-org">EBAC</span></li>
+</ul></details>
+</div>
+<p class="section-note">Os grupos apresentam uma seleção de cursos e certificados. O total informado no currículo é superior a 46 certificados e 410 horas de formação complementar. Os cursos de Python da Hashtag Treinamentos somam 239 horas; a trilha de n8n reúne 14 certificados.</p>
+</div>
 </section>
-
-
-<section id="atividades">
-  <div class="wrap">
-    <div class="sh"><span class="n">08</span><h2>Atividades práticas da graduação</h2></div>
-    <p class="sub">Trabalhos entregues nas disciplinas, de 2024 a 2025.</p>
-    <div class="acts">
-      <div class="act"><span class="y">2025</span><div><h3>Computação em Nuvem</h3><p>Estudos de caso de migração para a nuvem: modelos SaaS, PaaS e IaaS; serviços da AWS (S3, EC2, RDS, DynamoDB, Elastic Beanstalk e Amplify); escalabilidade; e mitigação de riscos de segurança.</p><div class="tags"><span>AWS</span><span>SaaS, PaaS e IaaS</span><span>Segurança</span></div></div></div>
-      <div class="act"><span class="y">2025</span><div><h3>Desenvolvimento Web: Back End</h3><p>API REST de cadastro de tarefas, com operações de inserção, consulta, atualização e exclusão, testada no Postman e publicada no GitHub.</p><div class="tags"><span>API REST</span><span>Postman</span><span>GitHub</span></div></div></div>
-      <div class="act"><span class="y">2025</span><div><h3>Banco de Dados NoSQL</h3><p>Modelagem em grafo no Neo4j a partir de arquivos JSON de tweets: criação de nós e relacionamentos, identificação da hashtag principal e análise da rede sob um viés escolhido.</p><div class="tags"><span>Neo4j</span><span>Cypher</span><span>JSON</span></div></div></div>
-      <div class="act"><span class="y">2025</span><div><h3>Análise Exploratória de Dados</h3><p>Estatística descritiva, frequências absoluta e relativa, medidas por grupo (média, mediana, desvio padrão e variância) e gráficos de barras e boxplot, com Python e Pandas no Google Colab.</p><div class="tags"><span>Python</span><span>Pandas</span><span>Google Colab</span></div></div></div>
-      <div class="act"><span class="y">2025</span><div><h3>Atividades Extensionistas II: Ensino Web</h3><p>Ensino de lógica de programação em Python a alunos do 6º ano da E.E. Visconde de Taunay, em Santo André, com um programa de gestão financeira em Jupyter Notebook. Alinhado ao Objetivo de Desenvolvimento Sustentável (ODS) 4, Educação de Qualidade.</p><div class="tags"><span>Python</span><span>Jupyter Notebook</span><span>Educação</span></div></div></div>
-      <div class="act"><span class="y">2024</span><div><h3>Banco de Dados Relacional</h3><p>Modelo entidade-relacionamento de uma clínica médica e implementação do banco "Livraria" no MySQL Workbench, com chaves primárias e estrangeiras, restrições NOT NULL e carga de dados.</p><div class="tags"><span>MER</span><span>SQL</span><span>MySQL</span></div></div></div>
-      <div class="act"><span class="y">2024</span><div><h3>Coleta de Requisitos e Modelagem de Banco de Dados</h3><p>Casos de uso em UML, diagrama de classes e modelo conceitual para o sistema de uma startup de produtos agropecuários e pet, com dois perfis de acesso: administrador e funcionário.</p><div class="tags"><span>UML</span><span>Casos de uso</span><span>Modelo conceitual</span></div></div></div>
-      <div class="act"><span class="y">2024</span><div><h3>Fundamentos de Desenvolvimento Web</h3><p>Páginas em HTML e CSS com formulário de contato e página de formação.</p><div class="tags"><span>HTML</span><span>CSS</span></div></div></div>
-      <div class="act"><span class="y">Extensão</span><div><h3>Atividades Extensionistas: Vida tem água, vidas em águas (Ubatuba, SP)</h3><p>Planejamento de uma solução em três fases para a preservação da vida marinha, alinhada aos ODS 14 e 17: site em HTML, bancos de dados SQL em cada esfera de governo e o aplicativo UBAFIS (Ubatuba Fiscaliza), para denúncias e fiscalização.</p><div class="tags"><span>HTML</span><span>SQL</span><span>Python</span><span>Planejamento</span></div></div></div>
-    </div>
-  </div>
-</section>
-
 <section id="experiencia">
-  <div class="wrap">
-    <div class="sh"><span class="n">09</span><h2>Experiência profissional</h2></div>
-    <p class="sub">Antes de atuar em T.I., trabalhei como instrutor de trânsito.</p>
-    <article class="exp">
-      <h3>Instrutor de Trânsito (teórico e prático)</h3>
-      <p class="meta2">Autoescola em Santo André, SP · mar/2020 a out/2021</p>
-      <ul>
-        <li>Mais de 92% dos alunos concluíram o circuito de manobras com êxito, por meio de instrução prática, de orientação clara e do acompanhamento do desempenho.</li>
-        <li>Aulas teóricas e práticas de condução de motocicletas, reforçando procedimentos de segurança, comunicação e cumprimento de normas.</li>
-      </ul>
-    </article>
-  </div>
+<div class="container">
+<div class="section-head">
+<span class="section-index">09 / EXPERIÊNCIA</span>
+<div><h2>Experiência profissional e competências transferíveis.</h2><p>Minha experiência profissional anterior à área de tecnologia também desenvolveu competências úteis para ambientes de trabalho que exigem comunicação, responsabilidade e cumprimento de procedimentos.</p></div>
+</div>
+<article class="experience-card">
+<div class="experience-meta">AUTOESCOLA EM SANTO ANDRÉ · SP<br/>MAR/2020 — OUT/2021</div>
+<div><h3>Instrutor de Trânsito — teórico e prático</h3><p class="role-date">Instrução, orientação e acompanhamento de desempenho</p><ul><li>Mais de 92% dos alunos concluíram o circuito de manobras com êxito, por meio de instrução prática, orientação clara e acompanhamento do desempenho.</li><li>Ministrei aulas teóricas e práticas de condução de motocicletas, com ênfase em procedimentos de segurança, comunicação e cumprimento das normas.</li></ul></div>
+</article>
+<div class="transfer-grid">
+<div class="transfer-item"><strong>Comunicação didática</strong><span>Explicação de procedimentos e orientação individual.</span></div>
+<div class="transfer-item"><strong>Acompanhamento</strong><span>Observação do desempenho e orientação para evolução.</span></div>
+<div class="transfer-item"><strong>Segurança e processos</strong><span>Atenção às normas, aos procedimentos e à execução correta.</span></div>
+</div>
+</div>
 </section>
-
-<section id="contato">
-  <div class="wrap">
-    <div class="contact">
-      <h2>Contato</h2>
-      <p>Busco vaga de estágio ou cargo de assistente ou júnior em T.I., para aplicar meus conhecimentos em banco de dados, automação e IA na proteção de dados e sistemas, enquanto me preparo para a pós-graduação em Segurança da Informação.</p>
-      <p class="info">varlei.t.i.analise@gmail.com · (11) 94954-1700 · Santo André, SP</p>
-      <div class="cta" style="margin:0">
-        <a class="btn solid" href="https://www.linkedin.com/in/varleivazquezrueda">LinkedIn</a>
-        <a class="btn" href="https://github.com/VarleiRueda">GitHub</a>
-        <a class="btn" href="mailto:varlei.t.i.analise@gmail.com">E-mail</a>
-      </div>
-    </div>
-  </div>
+<section class="contact-section" id="contato">
+<div class="container contact-inner">
+<div>
+<p class="eyebrow">Próximo passo</p>
+<h2>Vamos conversar sobre uma oportunidade em tecnologia?</h2>
+<p>Busco uma oportunidade de entrada em TI, especialmente em banco de dados, SQL, análise de dados, automação ou suporte a sistemas. Quero aplicar o que desenvolvi em projetos e atividades acadêmicas, colaborar com a equipe e continuar evoluindo tecnicamente.</p>
+<div class="hero-actions">
+<a class="button button-primary" href="mailto:varlei.t.i.analise@gmail.com">Enviar e-mail <span aria-hidden="true">↗</span></a>
+<a class="button button-ghost" href="https://www.linkedin.com/in/varleivazquezrueda" rel="noopener noreferrer" target="_blank">Meu LinkedIn <span aria-hidden="true">↗</span></a>
+<a class="button button-ghost" href="https://wa.me/5511949541700" rel="noopener noreferrer" target="_blank">WhatsApp <span aria-hidden="true">↗</span></a></div>
+</div>
+<div class="contact-details">
+<div><span class="contact-label">E-mail</span><a href="mailto:varlei.t.i.analise@gmail.com">varlei.t.i.analise@gmail.com</a></div>
+<div><span class="contact-label">Telefone</span><a href="tel:+5511949541700">(11) 94954-1700</a></div>
+<div><span class="contact-label">GitHub</span><a href="https://github.com/VarleiRueda" rel="noopener noreferrer" target="_blank">github.com/VarleiRueda</a></div>
+<div><span class="contact-label">LinkedIn</span><a href="https://www.linkedin.com/in/varleivazquezrueda" rel="noopener noreferrer" target="_blank">linkedin.com/in/varleivazquezrueda</a></div>
+<div><span class="contact-label">Localização</span><span>Santo André, São Paulo, Brasil</span></div>
+</div>
+</div>
 </section>
 </main>
-
 <footer>
-  <div class="wrap mono">Varlei Vazquez Rueda · Santo André, SP · atualizado em novembro de 2026</div>
+<div class="container footer-inner">
+<span>VARLEI VAZQUEZ RUEDA · PORTFÓLIO PROFISSIONAL · NOVEMBRO DE 2026</span>
+<a class="back-top" href="#inicio">Voltar ao início ↑</a>
+</div>
 </footer>
+<script>
+    (() => {
+      const root = document.documentElement;
+      const toggle = document.getElementById('themeToggle');
+      if (!toggle) return;
+      let savedTheme = null;
+      try { savedTheme = localStorage.getItem('varlei-portfolio-theme'); } catch (_) {}
+      if (savedTheme === 'dark' || savedTheme === 'light') root.dataset.theme = savedTheme;
+      const syncLabel = () => {
+        toggle.setAttribute('aria-label', root.dataset.theme === 'dark' ? 'Ativar tema claro' : 'Ativar tema escuro');
+      };
+      syncLabel();
+      toggle.addEventListener('click', () => {
+        const nextTheme = root.dataset.theme === 'dark' ? 'light' : 'dark';
+        root.dataset.theme = nextTheme;
+        try { localStorage.setItem('varlei-portfolio-theme', nextTheme); } catch (_) {}
+        syncLabel();
+      });
+    })();
+    </script>
 </body>
 </html>
