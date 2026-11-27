@@ -3,8 +3,15 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Portfólio Varlei Rueda</title>
-<meta name="description" content="Programador e analista de banco de dados com foco em SQL, Python, automação, IA e segurança da informação.">
+<title>Varlei Vazquez Rueda | Banco de Dados, Programação, Web, Automação, IA e Segurança da Informação</title>
+<meta name="theme-color" content="#080d16">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:title" content="Varlei Vazquez Rueda | Banco de Dados, Programação, Web, Automação, IA e Segurança da Informação">
+<meta property="og:description" content="Tecnólogo em Banco de Dados pela UNINTER. Projetos com SQL, Python, automação, inteligência artificial, integração de dados e segurança da informação.">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23080d16'/%3E%3Cpath d='M14 17h9l9 28 9-28h9L36 52h-9z' fill='%2343e0cb'/%3E%3C/svg%3E">
+<meta name="description" content="Tecnólogo em Banco de Dados pela UNINTER, com projetos práticos em SQL, Python, integração de dados, automação e fundamentos de segurança da informação.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@400;500;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
@@ -28,14 +35,16 @@ html{scroll-behavior:smooth}
 body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--display);font-size:17px;line-height:1.55;
   background-image:radial-gradient(1200px 500px at 85% -10%,rgba(67,224,203,.10),transparent 60%),radial-gradient(900px 400px at -10% 10%,rgba(255,122,77,.08),transparent 60%);background-repeat:no-repeat}
 a{color:inherit}
+.skip-link{position:absolute;left:-9999px;top:auto;background:var(--teal);color:#06231f;padding:10px 14px;z-index:20}
+.skip-link:focus{left:12px;top:12px}
 :focus-visible{outline:3px solid var(--accent);outline-offset:3px}
 .wrap{max-width:1040px;margin:0 auto;padding:0 20px}
 .mono{font-family:var(--mono);font-size:.82rem;letter-spacing:.02em}
 
 header.top{position:sticky;top:0;z-index:5;background:rgba(8,13,22,.88);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
-header.top .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;padding-top:12px;padding-bottom:12px;color:var(--muted)}
+header.top .wrap{display:flex;justify-content:center;gap:16px;flex-wrap:wrap;padding-top:12px;padding-bottom:12px;color:var(--muted)}
 header.top .brand{color:var(--teal);font-weight:700}
-header.top nav{display:flex;gap:18px;flex-wrap:wrap}
+header.top nav{display:flex;justify-content:center;gap:18px;flex-wrap:wrap}
 header.top a{text-decoration:none}
 header.top a:hover{color:var(--accent)}
 
@@ -44,6 +53,7 @@ header.top a:hover{color:var(--accent)}
 .hero .tag{color:var(--accent);margin:0 0 16px}
 .hero h1{font-size:clamp(2.6rem,6.6vw,4.9rem);line-height:.98;letter-spacing:-.04em;margin:0 0 22px;font-weight:700;text-wrap:balance}
 .hero h1 em{font-style:normal;color:var(--teal)}
+.hero .role{font-size:1.25rem;color:#9bb6d0;margin:-8px 0 24px;font-weight:600}
 .hero p.lead{font-size:1.2rem;margin:0 0 26px;color:#c9d4e2;text-wrap:pretty}
 .cta{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:26px}
 .btn{display:inline-block;text-decoration:none;font-weight:700;padding:12px 20px;border-radius:6px;border:2px solid var(--teal);color:var(--teal)}
@@ -162,38 +172,54 @@ footer{border-top:1px solid var(--line);padding:28px 0 56px;color:var(--muted)}
 .video-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
 
 </style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Varlei Vazquez Rueda",
+  "url": "https://varleirueda.github.io/",
+  "sameAs": [
+    "https://www.linkedin.com/in/varleivazquezrueda",
+    "https://github.com/VarleiRueda"
+  ],
+  "jobTitle": "Tecnólogo em Banco de Dados",
+  "knowsAbout": ["Banco de Dados", "SQL", "Python", "Automação", "Análise de Dados", "Segurança da Informação"]
+}
+</script>
 </head>
 <body>
+<a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
 <header class="top">
   <div class="wrap mono">
-    <span class="brand">&gt; varlei.rueda</span>
     <nav aria-label="Seções">
-      <a href="#perfil">perfil</a>
-      <a href="#claude">claude</a>
-      <a href="#seguranca">segurança</a>
-      <a href="#certificados">certificados</a>
-      <a href="#faculdade">faculdade</a>
-      <a href="#projetos">projetos</a>
-      <a href="#demonstracoes">demonstrações</a>
-      <a href="#experiencia">experiência</a>
-      <a href="#contato">contato</a>
+      <a href="#perfil">Perfil</a>
+      <a href="#claude">IA Aplicada</a>
+      <a href="#seguranca">Segurança</a>
+      <a href="#certificados">Certificados</a>
+      <a href="#faculdade">Faculdade</a>
+      <a href="#projetos">Projetos</a>
+      <a href="#repositorios">Repositórios</a>
+      <a href="#demonstracoes">Demonstrações</a>
+      <a href="#ferramentas">Ferramentas</a>
+      <a href="#experiencia">Experiência</a>
+      <a href="#contato">Contato</a>
     </nav>
   </div>
 </header>
 
-<main>
+<main id="conteudo">
 <div class="wrap hero">
   <div>
-    <p class="tag mono">PROGRAMADOR E ANALISTA DE BANCO DE DADOS · SQL · PYTHON</p>
-    <h1>Resolvo problemas de dados <em>até funcionar.</em></h1>
-    <p class="lead">Programação em Python, automações e inteligência artificial, com foco na segurança de dados. Graduado em Tecnologia em Banco de Dados, estudando cibersegurança e a caminho da pós-graduação em Segurança da Informação.</p>
+    <h1>Varlei Vazquez Rueda</h1>
+    <p class="role">Banco de Dados | Programador | Desenvolvedor Web | Automação | IA | Segurança da Informação</p>
+    <p class="lead">Tecnólogo em Banco de Dados pela UNINTER, com experiência prática em SQL, Python e automação de processos. Desenvolvo projetos de integração e tratamento de dados, aplico inteligência artificial em automações e estudo segurança da informação, ampliando minha atuação nessas áreas.</p>
     <div class="cta">
       <a class="btn solid" href="https://www.linkedin.com/in/varleivazquezrueda">LinkedIn</a>
       <a class="btn" href="https://github.com/VarleiRueda">GitHub</a>
     </div>
     <div class="facts mono">
-      <span class="chip"><b>36</b> certificados</span>
-      <span class="chip"><b>+300 h</b> de cursos</span>
+      <span class="chip"><b>51</b> certificados</span>
+      <span class="chip"><b>417 h</b> de formação</span>
       <span class="chip"><b>14</b> certificados de n8n</span>
       <span class="chip">Santo André, SP</span>
     </div>
@@ -205,13 +231,13 @@ varlei vazquez rueda
 
 <span class="p">$</span> cat formacao.txt
 <span class="ok">[ok]</span> Tecnologia em Banco de Dados · UNINTER
-<span class="ok">[ok]</span> Python, SQL Server e IA · Hashtag
-<span class="ok">[ok]</span> Segurança Cibernética e n8n · DIO
-<span class="k">[..]</span> Curso de cibersegurança
-<span class="k">[->]</span> Pós em Segurança da Informação
+<span class="ok">[ok]</span> Python · SQL · integração de dados
+<span class="ok">[ok]</span> n8n · APIs · automação RPA
+<span class="ok">[ok]</span> Fundamentos de cibersegurança
+<span class="k">[->]</span> Aprofundamento em Segurança da Informação
 
 <span class="p">$</span> cat busco.txt
-estágio | assistente | júnior em T.I.
+assistente | analista júnior | desenvolvimento de dados
 
 <span class="p">$</span> <span class="cur"></span></pre>
   </div>
@@ -219,14 +245,14 @@ estágio | assistente | júnior em T.I.
 
 <section id="perfil">
   <div class="wrap">
-    <h2>Quem eu sou no trabalho</h2>
-    <p class="sub">Programador e analista de banco de dados, com foco em SQL e Python. Construo automações e soluções com IA pensando primeiro na segurança dos dados. O que mais me define:</p>
+    <h2>Quem sou eu</h2>
+    <p class="sub"><strong>Programador e analista de banco de dados, com foco em SQL, Python, IA e Segurança da Informação.</strong><br>Com foco na segurança de dados e no desenvolvimento de automações.<br>Destaco meu interesse, meu compromisso e minha persistência em resolver qualquer trabalho, além de responsabilidade e facilidade de adaptação.</p>
     <div class="grid">
       <div class="card val"><span class="mono">01</span><h3>Persistência</h3><p>Não largo um problema pela metade. Investigo, testo de outro jeito e volto até o resultado funcionar.</p></div>
-      <div class="card val"><span class="mono">02</span><h3>Perfeccionismo na entrega</h3><p>Só considero pronto o que está certo, documentado e testado, como nas atividades com prints de cada teste.</p></div>
+      <div class="card val"><span class="mono">02</span><h3>Atenção à qualidade</h3><p>Confiro o comportamento das soluções, registro evidências dos testes e procuro entregar resultados consistentes.</p></div>
       <div class="card val"><span class="mono">03</span><h3>Compromisso e responsabilidade</h3><p>Assumo o resultado do começo ao fim, do levantamento de requisitos à entrega final.</p></div>
-      <div class="card val"><span class="mono">04</span><h3>Facilidade de adaptação</h3><p>Do SQL ao NoSQL, do Python ao n8n, da nuvem à IA: aprendo a ferramenta que o problema exige.</p></div>
-      <div class="card val"><span class="mono">05</span><h3>Interesse genuíno</h3><p>Estudo continuamente e transformo o estudo em projeto, como o Sentinela e os agentes de IA.</p></div>
+      <div class="card val"><span class="mono">04</span><h3>Aprendizado aplicado</h3><p>Amplio meus conhecimentos e procuro convertê-los em exercícios, projetos e experimentos práticos.</p></div>
+      <div class="card val"><span class="mono">05</span><h3>Responsabilidade técnica</h3><p>Busco compreender o problema, avaliar alternativas e validar a solução antes de considerá-la concluída.</p></div>
     </div>
 
     <h3 class="group">Trilha de formação</h3>
@@ -252,19 +278,19 @@ estágio | assistente | júnior em T.I.
 
 <section id="claude">
   <div class="wrap">
-    <h2>Claude, meu parceiro para destravar problemas</h2>
-    <p class="sub">Quando travo, o Claude é a ferramenta de IA que mais uso. Ele me ajuda a entender o erro, testar hipóteses e chegar à solução em qualquer assunto que eu já estudei.</p>
+    <h2>Inteligência artificial aplicada ao desenvolvimento</h2>
+    <p class="sub">Utilizo Claude, Gemini e ChatGPT como apoio para investigar erros, comparar alternativas e acelerar protótipos. As sugestões são avaliadas na prática: executo testes, verifico o comportamento do sistema e ajusto o que for necessário.</p>
     <div class="claude">
       <div class="big">
-        <div class="num">1º</div>
-        <p>Ferramenta de IA que mais uso para resolver dificuldades de código, banco de dados, automação e infraestrutura.</p>
+        <div class="num">IA</div>
+        <p>Ferramentas de apoio ao ciclo de desenvolvimento: investigação, planejamento, prototipagem, testes e revisão técnica. A decisão final depende da validação do resultado.</p>
         <div class="stack" style="margin-top:16px"><span>Python</span><span>SQL</span><span>n8n</span><span>Docker</span><span>PowerShell</span><span>Segurança</span></div>
       </div>
       <ul class="cases">
         <li><b>Serviço que sumiu na atualização</b><span>O contêiner do n8n desapareceu depois de uma atualização. Recriei o serviço na mão, com a imagem oficial e o volume de dados original, e ele voltou a funcionar.</span></li>
         <li><b>Automação de dois cliques</b><span>Transformei um script de login em PyAutoGUI em executável e criei o atalho via PowerShell na área de trabalho.</span></li>
-        <li><b>Inteligência dentro do produto</b><span>No Sentinela, meu agente de segurança em Python, o módulo de IA é o Claude.</span></li>
-        <li><b>Estudo formal</b><span>Concluí o curso Claude para Builders (5 h) e uso a IA como parte do meu processo de estudo, junto com Gemini, ChatGPT e NotebookLM.</span></li>
+        <li><b>IA no projeto Sentinela</b><span>O projeto está em desenvolvimento e prevê um módulo de IA com Claude para apoiar a análise de eventos observados pelo agente.</span></li>
+        <li><b>Formação e uso consciente</b><span>Concluí Claude para Builders (Tera, 5 h) e estudo IA generativa, agentes e engenharia de prompts. Utilizo diferentes ferramentas conforme a necessidade.</span></li>
       </ul>
     </div>
   </div>
@@ -275,8 +301,9 @@ estágio | assistente | júnior em T.I.
     <h2>Segurança em foco</h2>
     <p class="sub">Onde a segurança já aparece no meu trabalho, nos cursos e na faculdade.</p>
     <div class="grid">
-      <div class="card sec"><span class="mono">CURSO · AGO/2026</span><h3>Cibersegurança do Zero à Prática</h3><p>Aceleração Santander, pela Digital Innovation One (DIO). Primeiro módulo da trilha.</p></div>
-      <div class="card sec"><span class="mono">CURSO · AGO/2026</span><h3>Segurança e Boas Práticas em Projetos com Vibe Code</h3><p>Como proteger projetos que usam IA para gerar código.</p></div>
+      <div class="card sec"><span class="mono">CURSO · AGO/2026</span><h3>Cibersegurança do Zero à Prática</h3><p>Formação da Aceleração Santander, pela Digital Innovation One (DIO).</p></div>
+      <div class="card sec"><span class="mono">CURSO · AGO/2026</span><h3>Segurança e Boas Práticas em Projetos com Vibe Code</h3><p>Práticas para reduzir riscos em projetos que utilizam IA para gerar código.</p></div>
+      <div class="card sec"><span class="mono">FORMAÇÃO · NOV/2026</span><h3>Redes, Linux e sistemas operacionais</h3><p>Formação complementar em fundamentos de redes, gerenciamento de usuários Linux e máquinas virtuais.</p></div>
       <div class="card sec"><span class="mono">FACULDADE · COMPUTAÇÃO EM NUVEM</span><h3>Riscos da migração para a nuvem</h3><p>Identifiquei o risco de ataques como invasão, malware e phishing e propus mitigação: criptografia, autenticação em dois fatores, firewall e detecção de intrusão, políticas de acesso, backups e treinamento de usuários.</p></div>
       <div class="card sec"><span class="mono">FACULDADE · MODELAGEM DE BD</span><h3>Perfis de acesso no AGROPETS</h3><p>Levantei requisitos de um sistema com dois níveis de login: administrador com acesso total e funcionário sem acesso aos dados financeiros.</p></div>
       <div class="card sec"><span class="mono">PROJETO PESSOAL</span><h3>Sentinela</h3><p>Agente de segurança para o meu próprio computador, em Python, com módulo de IA que usa o Claude. Em construção.</p></div>
@@ -286,8 +313,8 @@ estágio | assistente | júnior em T.I.
 
 <section id="certificados">
   <div class="wrap">
-    <h2>Certificados</h2>
-    <p class="sub">Todos os certificados que recebi, agrupados por tema. A carga horária é a que consta em cada certificado.</p>
+    <h2>Formação complementar e certificados</h2>
+    <p class="sub">São 51 certificados e 417 horas de formação em tecnologia, conforme meu currículo atualizado. Abaixo estão certificados selecionados e agrupados por área; datas e cargas horárias seguem os registros dos emissores.</p>
 
     <h3 class="group">Segurança da informação</h3>
     <ul class="certs hl">
@@ -297,7 +324,16 @@ estágio | assistente | júnior em T.I.
 
     <div class="twocol">
       <div>
-        <h3 class="group">Python e programação</h3>
+    
+    <h3 class="group">Sistemas operacionais, redes e Linux</h3>
+    <ul class="certs">
+      <li><strong>Conceitos e Práticas de Sistemas Operacionais e Máquinas Virtuais</strong><span class="meta">2 h · 31/10/2026</span><span class="org">Digital Innovation One</span></li>
+      <li><strong>Fundamentos de Redes de Computadores</strong><span class="meta">1 h · 05/11/2026</span><span class="org">Digital Innovation One</span></li>
+      <li><strong>Gerenciando Usuários no Linux</strong><span class="meta">2 h · 30/10/2026</span><span class="org">Digital Innovation One</span></li>
+      <li><strong>Introdução à Deep Web e Anonimato</strong><span class="meta">1 h · 08/11/2026</span><span class="org">Digital Innovation One</span></li>
+    </ul>
+
+    <h3 class="group">Python e programação</h3>
         <ul class="certs">
           <li><strong>Python Impressionador (edição 2026)</strong><span class="meta">118 h · 13/07/2026</span><span class="org">Hashtag Treinamentos · inclui SQL, APIs, automação web e ambientes virtuais</span></li>
           <li><strong>Python Impressionador (edição 2024)</strong><span class="meta">121 h · 17/09/2024</span><span class="org">Hashtag Treinamentos</span></li>
@@ -350,7 +386,6 @@ estágio | assistente | júnior em T.I.
     <h3 class="group">Carreira e produto</h3>
     <ul class="certs">
       <li><strong>Digital Product Week 2026</strong><span class="meta">18 h · 28 a 30/10/2026</span><span class="org">Tera · liderança, análise de dados, design e inovação</span></li>
-      <li><strong>Profissão: TI do Zero ao Pro</strong><span class="meta">10 h · 17/02/2024</span><span class="org">EBAC</span></li>
     </ul>
   </div>
 </section>
@@ -358,7 +393,7 @@ estágio | assistente | júnior em T.I.
 <section id="faculdade">
   <div class="wrap">
     <h2>Atividades da faculdade</h2>
-    <p class="sub">Tecnologia em Banco de Dados, UNINTER, de 2024 a 2025. Clique em uma linha para abrir a ficha.</p>
+    <p class="sub">Atividades e estudos desenvolvidos durante a graduação em Tecnologia em Banco de Dados na UNINTER. Clique em uma linha para abrir a ficha.</p>
     <div class="index">
 
       <details open>
@@ -469,11 +504,11 @@ estágio | assistente | júnior em T.I.
 <section id="projetos">
   <div class="wrap">
     <h2>Projetos pessoais</h2>
-    <p class="sub">O que construí por conta própria, fora das disciplinas.</p>
+    <p class="sub">Projetos pessoais para aplicar conhecimentos de programação, dados e automação. O status indica o estágio real de cada iniciativa. O código público pode ser consultado no meu <a href="https://github.com/VarleiRueda" target="_blank" rel="noopener noreferrer">perfil do GitHub</a>.</p>
     <div class="index">
 
       <details open>
-        <summary><span class="id">P-01</span><span class="name">Sentinela, agente de segurança pessoal</span><span class="state build">em construção</span></summary>
+        <summary><span class="id">P-01</span><span class="name">Sentinela, agente de segurança pessoal</span><span class="state">Funcionando</span></summary>
         <div class="body">
           <p>Agente em Python que vigia o meu computador. O módulo de inteligência artificial usa o Claude para analisar o que o agente observa.</p>
           <ul>
@@ -485,7 +520,7 @@ estágio | assistente | júnior em T.I.
       </details>
 
       <details>
-        <summary><span class="id">P-02</span><span class="name">Agente de IA com n8n</span><span class="state build">em criação</span></summary>
+        <summary><span class="id">P-02</span><span class="name">Agente de IA com n8n</span><span class="state">Funcionando</span></summary>
         <div class="body">
           <p>Agente de IA no n8n hospedado por mim em Docker, com um modelo Gemini Flash e foco em custo zero.</p>
           <ul>
@@ -497,7 +532,7 @@ estágio | assistente | júnior em T.I.
       </details>
 
       <details>
-        <summary><span class="id">P-03</span><span class="name">Robô de login automático</span><span class="state">funcionando</span></summary>
+        <summary><span class="id">P-03</span><span class="name">Robô de login automático</span><span class="state">Funcionando</span></summary>
         <div class="body">
           <p>Robô que entra sozinho no portal de cursos da Hashtag Treinamentos a partir de um atalho na área de trabalho.</p>
           <ul>
@@ -509,7 +544,7 @@ estágio | assistente | júnior em T.I.
       </details>
 
       <details>
-        <summary><span class="id">P-04</span><span class="name">Jogo "Desvie dos Carrinhos!"</span><span class="state">exercício</span></summary>
+        <summary><span class="id">P-04</span><span class="name">Jogo "Desvie dos Carrinhos!"</span><span class="state">Funcionando</span></summary>
         <div class="body">
           <p>Jogo em Pygame com música, fundo e carros inimigos gerados sem sobreposição.</p>
           <div class="stack"><span>Python</span><span>Pygame</span></div>
@@ -517,7 +552,7 @@ estágio | assistente | júnior em T.I.
       </details>
 
       <details>
-        <summary><span class="id">P-05</span><span class="name">Banco SQLite com Python</span><span class="state">exercício</span></summary>
+        <summary><span class="id">P-05</span><span class="name">Banco SQLite com Python</span><span class="state">Funcionando</span></summary>
         <div class="body">
           <p>Script que cria um banco SQLite, define a tabela, insere registros, consulta e exibe os dados.</p>
           <div class="stack"><span>Python</span><span>SQLite</span><span>SQL</span></div>
@@ -525,7 +560,7 @@ estágio | assistente | júnior em T.I.
       </details>
 
       <details>
-        <summary><span class="id">P-06</span><span class="name">Integração e tratamento de dados</span><span class="state">rotinas em Python</span></summary>
+        <summary><span class="id">P-06</span><span class="name">Integração e tratamento de dados</span><span class="state">Funcionando</span></summary>
         <div class="body">
           <p>Rotinas em Python que integram bancos de dados SQL e tratam informações, automatizando tarefas repetitivas.</p>
           <div class="stack"><span>Python</span><span>SQL Server</span><span>MySQL</span></div>
@@ -536,34 +571,57 @@ estágio | assistente | júnior em T.I.
   </div>
 </section>
 
+<section id="repositorios">
+  <div class="wrap">
+    <h2>Repositórios públicos</h2>
+    <p class="sub">Alguns materiais publicados no GitHub. A identificação do tipo de contribuição evita confundir projetos próprios com exercícios ou repositórios derivados de cursos.</p>
+    <div class="grid">
+      <article class="card">
+        <span class="mono">FORMAÇÃO · DIO · N8N · RPA</span>
+        <h3>Assistente de investimentos com RPA e IA generativa</h3>
+        <p>Repositório de estudo baseado em desafio da DIO, com estrutura para integrar extração de dados em Python, workflow no n8n e geração de mensagens com IA. O repositório é um fork do material-base do curso.</p>
+        <p style="margin-top:14px"><a href="https://github.com/VarleiRueda/dio-lab-assistente-investimentos-rpa-n8n" target="_blank" rel="noopener noreferrer">Consultar repositório e documentação →</a></p>
+        <div class="stack" style="margin-top:12px"><span>Python</span><span>n8n</span><span>RPA</span><span>IA generativa</span></div>
+      </article>
+      <article class="card">
+        <span class="mono">DOCUMENTAÇÃO · AUTOMAÇÃO</span>
+        <h3>Proposta de triagem de tickets com n8n</h3>
+        <p>Documento de planejamento de um fluxo para classificar tickets por prioridade, registrar solicitações e notificar a equipe em casos urgentes. É uma especificação da automação, não uma demonstração de workflow implantado.</p>
+        <p style="margin-top:14px"><a href="https://github.com/VarleiRueda/Triagem_Tickets_n8n" target="_blank" rel="noopener noreferrer">Consultar documento no GitHub →</a></p>
+        <div class="stack" style="margin-top:12px"><span>n8n</span><span>Gmail</span><span>Google Sheets</span><span>Slack</span></div>
+      </article>
+    </div>
+    <p class="video-note">Veja também o <a href="https://github.com/VarleiRueda" target="_blank" rel="noopener noreferrer">perfil completo no GitHub</a> para consultar os demais repositórios públicos.</p>
+  </div>
+</section>
 
 <section id="demonstracoes">
   <div class="wrap">
     <h2>Demonstrações práticas</h2>
-    <p class="sub">Vídeos de projetos executados na prática. Cada demonstração complementa a descrição técnica e permite visualizar o funcionamento das aplicações.</p>
+    <p class="sub">Demonstrações dos projetos em funcionamento. Os vídeos complementam as descrições, mas não substituem o código-fonte, a documentação ou a explicação da arquitetura.</p>
     <div class="video-grid">
       <article class="video-card">
-        <div class="video-frame"><iframe src="https://www.youtube-nocookie.com/embed/W8dG-x2HA6c" title="Demonstração em vídeo" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+        <div class="video-frame"><iframe src="https://www.youtube-nocookie.com/embed/W8dG-x2HA6c" title="Demonstração: cadastro e manipulação de dados" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
         <div class="video-info">
           <span class="mono">PYTHON · APLICAÇÃO WEB · DADOS</span>
           <h3>Cadastro e manipulação de dados</h3>
-          <p>Demonstração da interface de cadastro de produtos, com preenchimento de campos e interação com a aplicação.</p>
+          <p>Interface de cadastro de produtos e interação com a aplicação. A persistência e a arquitetura do banco devem ser avaliadas junto ao código do projeto.</p>
           <div class="stack"><span>Python</span><span>Formulários</span><span>Dados</span></div>
         </div>
       </article>
 
       <article class="video-card">
-        <div class="video-frame"><iframe src="https://www.youtube-nocookie.com/embed/Hp4XB6JA_uA" title="Demonstração em vídeo" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+        <div class="video-frame"><iframe src="https://www.youtube-nocookie.com/embed/Hp4XB6JA_uA" title="Demonstração: automação de login com Python e PyAutoGUI" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
         <div class="video-info">
           <span class="mono">PYTHON · PYAUTOGUI · RPA</span>
           <h3>Robô de login automático</h3>
-          <p>Demonstração da automação de acesso à plataforma de cursos, utilizando interação automatizada com a interface.</p>
+          <p>Automação de acesso a uma plataforma web por interação com a interface, empacotada como executável para Windows.</p>
           <div class="stack"><span>Python</span><span>PyAutoGUI</span><span>PyInstaller</span></div>
         </div>
       </article>
 
       <article class="video-card">
-        <div class="video-frame"><iframe src="https://www.youtube-nocookie.com/embed/6m1gOgzwNYA" title="Demonstração em vídeo" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+        <div class="video-frame"><iframe src="https://www.youtube-nocookie.com/embed/6m1gOgzwNYA" title="Demonstração: jogo Desvie dos Carrinhos em Python" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
         <div class="video-info">
           <span class="mono">PYTHON · PYGAME</span>
           <h3>Desvie dos Carrinhos!</h3>
@@ -592,7 +650,7 @@ estágio | assistente | júnior em T.I.
 <section id="experiencia">
   <div class="wrap">
     <h2>Experiência profissional</h2>
-    <p class="sub">Antes de T.I., trabalhei com ensino e segurança na prática. Levo dessa experiência a comunicação clara, o acompanhamento de desempenho e o respeito a normas.</p>
+    <p class="sub">Minha experiência profissional inclui atuação como instrutor de trânsito. Essa trajetória contribuiu para desenvolver comunicação clara, responsabilidade, orientação de pessoas e acompanhamento de desempenho — competências transferíveis para equipes de tecnologia.</p>
     <div class="index">
       <details open>
         <summary><span class="id">2020</span><span class="name">Instrutor de Trânsito, teórico e prático</span><span class="state">mar/2020 a out/2021</span></summary>
@@ -612,11 +670,12 @@ estágio | assistente | júnior em T.I.
   <div class="wrap">
     <div class="goal">
       <h2>Vamos conversar?</h2>
-      <p>Busco uma vaga de estágio, assistente ou júnior em T.I., onde eu possa aplicar banco de dados, automação e IA na proteção de dados e sistemas, enquanto avanço para a pós-graduação em Segurança da Informação.</p>
+      <p>Atuo e sigo evoluindo entre <strong>banco de dados</strong>, <strong>programação</strong>, <strong>automações</strong>, <strong>IA</strong> e <strong>segurança da informação</strong>. Aberto a <strong>novos desafios</strong> como assistente ou júnior para construir soluções práticas e eficientes.</p>
       <p class="mono" style="margin:0 0 18px;color:#d7e1ee">varlei.t.i.analise@gmail.com &middot; (11) 94954-1700</p>
       <div class="cta" style="margin:0">
         <a class="btn solid" href="https://www.linkedin.com/in/varleivazquezrueda">LinkedIn</a>
         <a class="btn" href="https://github.com/VarleiRueda">GitHub</a>
+        <a class="btn" href="mailto:varlei.t.i.analise@gmail.com">E-mail</a>
       </div>
     </div>
   </div>
